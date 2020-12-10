@@ -2,7 +2,7 @@
 
 *   🍊 Javascript
 
-    -   [프로토타입](/docs/javascript/prototype.md)
+    -   [프로토타입](/javascript/prototype.md)
     -   [테스트 파일](/javascript/hello.md)
 
 *   💅 CSS
