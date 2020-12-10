@@ -1,12 +1,14 @@
--   🍊 Javascript
+-   [Home](/)
+
+*   🍊 Javascript
 
     -   [테스트 파일](/javascript/test.md)
     -   [테스트 파일](/javascript/hello.md)
 
--   💅 CSS
+*   💅 CSS
 
--   🎞 Git
+*   🎞 Git
 
--   🌐 Web
+*   🌐 Web
 
--   👩🏻‍💻 회고록
+*   👩🏻‍💻 회고록
