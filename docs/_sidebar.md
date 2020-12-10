@@ -11,3 +11,6 @@
 *   🌐 Web
 
 *   👩🏻‍💻 회고록
+
+*   📝 Study
+    -   [Youtube Clone](/tutorials/youtubeClone.md)
