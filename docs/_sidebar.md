@@ -4,11 +4,15 @@
 
     -   [프로토타입](/javascript/prototype.md)
 
+*   🚂 HTML
+
 *   💅 CSS
+
+*   🌐 Browser
 
 *   🎞 Git
 
-*   🌐 Web
+*   🏗 Build tools
 
 *   👩🏻‍💻 회고록
 
