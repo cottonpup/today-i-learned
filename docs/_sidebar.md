@@ -20,4 +20,4 @@
 
     -   [Youtube Clone](/tutorials/youtubeClone.md)
 
-*   English Study
+*   🔤 English Study
