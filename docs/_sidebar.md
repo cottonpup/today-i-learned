@@ -3,6 +3,7 @@
 *   🍊 Javascript
 
     -   [프로토타입](/javascript/prototype.md)
+    -   [클래스](/javascript/class.md)
 
 *   🚂 HTML
 
