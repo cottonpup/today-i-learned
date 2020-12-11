@@ -22,6 +22,8 @@
 
     -   [Youtube Clone](/tutorials/youtubeClone.md)
 
+    -   [Udemy Javascript Course](/udemy-javascript-course.md)
+
 *   👩🏻‍💻 Study Record
 
 *   🔤 English Study
