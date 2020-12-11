@@ -22,7 +22,7 @@
 
     -   [Youtube Clone](/tutorials/youtubeClone.md)
 
-    -   [Udemy Javascript Course](../udemy-javascript-course.md)
+    -   [Udemy Javascript Course](/tutorials/유데미-자바스크립트-정리.md)
 
 *   👩🏻‍💻 Study Record
 
