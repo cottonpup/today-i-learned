@@ -7,6 +7,9 @@
 
 *   🚂 HTML
 
+    -   [Script 태그의 위치](/html/script태그의_위치.md)
+    -   [textContent vs innerText vs innerHTML](/html/../../html/textcontent_innertext_innerhtml.md)
+
 *   💅 CSS
 
 *   🌐 Browser
