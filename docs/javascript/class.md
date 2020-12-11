@@ -1,6 +1,6 @@
 # 클래스
 
-# getter와 setter
+## getter와 setter
 
 encapsulation: 유저가 데이터를 외부에서 수정하지 못하게 중요한 데이터를 보존, 보호하는 방법.
 
@@ -15,7 +15,7 @@ get age(){
 }
 ```
 
-# pubic vs private `실험적 기능`
+## pubic vs private `실험적 기능`
 
 ```js
 class Experiment {
@@ -24,7 +24,7 @@ class Experiment {
 }
 ```
 
-# static `실험적 기능`
+## static `실험적 기능`
 
 class 자체의 변수, 함수
 
@@ -45,7 +45,7 @@ console.log(article1.publisher); // undefined
 console.log(Article.publisher); // Dream Coding
 ```
 
-# extends 키워드
+## extends 키워드
 
 ```js
 class Shape {
@@ -86,7 +86,7 @@ console.log(rectangle.getArea());
 const triangle = new Triangle(20, 20, 'red');
 ```
 
-# instanceof
+## instanceof
 
 위 예제 instanceof로 class 체크하기
 
