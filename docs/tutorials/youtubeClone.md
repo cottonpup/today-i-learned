@@ -23,3 +23,9 @@ node.js를 사용하기 가장 좋은 경우는 많은 데이터를 다뤄야 �
 PayPal, Netflix, Uber, Likedin, Trello, New York Times..
 
 ## 2.0 What is a Server
+
+하드웨어적 서버란 물리적으로 항상 켜져있는 컴퓨터를 의미하고, 소프트웨어적 서버는 URL에서 답, 접속을 인가, 비인가해주는 역할을 한다.
+
+## 2.1 What is Express
+
+Express.js는 Node.js에서 작동하는 프레임워크이다.
