@@ -22,6 +22,6 @@
 
 *   📝 Tutorials / Book Study
 
-    -   [Youtube Clone](/tutorials/youtubeClone.md)
+    -   [Youtube Clone](/tutorials%20|%20book/youtubeClone.md)
 
 *   🔤 English Study
