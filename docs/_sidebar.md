@@ -14,7 +14,7 @@
 
 *   🏗 Build tools
 
-*   👩🏻‍💻 회고록
+*   👩🏻‍💻 My Diary
 
 *   📝 Tutorials / Book Study
 
