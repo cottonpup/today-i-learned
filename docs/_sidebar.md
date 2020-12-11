@@ -20,7 +20,7 @@
 
 *   📝 Tutorials / Book Study
 
-    -   [Youtube Clone](/tutorials|book/youtubeClone.md)
+    -   [Youtube Clone](/tutorials/youtubeClone.md)
 
 *   👩🏻‍💻 Study Record
 
