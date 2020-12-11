@@ -16,5 +16,8 @@
 
 *   👩🏻‍💻 회고록
 
-*   📝 Study
+*   📝 Tutorials / Book Study
+
     -   [Youtube Clone](/tutorials/youtubeClone.md)
+
+*   English Study
