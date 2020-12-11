@@ -7,6 +7,14 @@
         <meta name="description" content="Description" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+        <style>
+            .search ~ .search:nth-child(2) {
+                display: none;
+            }
+            .sidebar > .search:first-child {
+                display: none;
+            }
+        </style>
     </head>
     <body>
         <div id="app"></div>
@@ -34,7 +42,7 @@
                     placeholder: '찾고싶은 내용이 있나요?',
                     noData: '검색 결과가 없습니다 😢',
                     depth: 2,
-                    hideOtherSidebarContent: true
+                    hideOtherSidebarContent: false
                 },
                 disqus: 'Emily'
             };
