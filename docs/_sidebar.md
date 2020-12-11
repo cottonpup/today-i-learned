@@ -18,10 +18,10 @@
 
 *   🏗 Build tools
 
-*   👩🏻‍💻 My Diary
-
 *   📝 Tutorials / Book Study
 
-    -   [Youtube Clone](/tutorials%20|%20book/youtubeClone.md)
+    -   [Youtube Clone](/tutorials|book/youtubeClone.md)
+
+*   👩🏻‍💻 Study Record
 
 *   🔤 English Study
