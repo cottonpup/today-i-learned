@@ -263,3 +263,150 @@ Nodemon을 설치하면, 코드를 수정하고 저장(Ctrl+S) 버튼을 눌렀�
 그러면, 저장할 때마다, 아주 간편하게 자동으로 서버를 부를 수 있다.
 
 ## 2.6 Express Core: Middlewares
+
+script에 babel이 완료될 때까지 기다려줄 수 있게 `--delay 2`를 추가해준다.
+
+```js
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js --delay 2"
+  }
+```
+
+What is middleware? 처리가 끝날 때까지 연결되어있는 것.
+
+```js
+// next()를 통해 middleware로 호출/ middleware는 원하는 만큼 가질 수 있다.
+// ex) 로그인의 체크여부 등등..
+
+const betweenHome = (req, res, next) => {
+    console.log('between');
+    next();
+};
+
+// 라우팅 콜백 함수 사이에 직접 삽입하여 각개 적용
+app.get('/', betweenHome, handleHome);
+
+app.get('/profile', handleProfile);
+
+app.listen(PORT, handleListening);
+```
+
+-   미들웨어를 모두 적용하여 사용하는 방법
+
+미들웨어를 어디서 사용하는 가는 매우 중요하다. 접속이 있으면 위에서부터 아래로 내려간다.
+
+route이 전에 적어준다. 원하는 만큼 middleware를 적어놓을 수 있다.
+
+또한 `next();`을 사용해서 리퀘스트를 끝내줘야 한다.
+
+```js
+const betweenHome = (req, res, next) => {
+    console.log('between');
+    next();
+};
+// 이 코드 이후로 계속 미들웨어 실행
+app.use(betweenHome);
+
+app.get('/', handleHome);
+
+app.get('/profile', handleProfile);
+
+app.listen(PORT, handleListening);
+```
+
+## 2.7 Express Core: Middlewares part Two
+
+-   Morgan?
+
+Morgan은 middleware로서 logging(무슨 일이 어디서 일어났는 지 기록)에 도움을 준다.
+
+npm install morgan 을 이용해 morgan 설치
+
+`import morgan from 'morgan';`을 추가해주고, `app.use(morgan('tiny'));`을 통해 middleware를 호출한다.
+
+```js
+// logging이 시작!
+// GET /profile 304 - - 0.301 ms !!!
+app.use(morgan('tiny'));
+
+app.get('/', handleHome);
+
+app.get('/profile', handleProfile);
+
+app.listen(PORT, handleListening);
+```
+
+```js
+// logging이 시작!
+// 12/Dec/2020:14:00:46 +0000] "GET /profile HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome
+// 어떤 종류의 브라우저인지 등등 추적이 가능.
+app.use(morgan('combined'));
+
+app.get('/', handleHome);
+
+app.get('/profile', handleProfile);
+
+app.listen(PORT, handleListening);
+```
+
+```js
+// logging이 시작!
+// GET /profile `304` 3.035 ms - -
+// 컬러가 들어가있따..!
+app.use(morgan('dev'));
+
+app.get('/', handleHome);
+
+app.get('/profile', handleProfile);
+
+app.listen(PORT, handleListening);
+```
+
+-   helmet? node.js앱의 보안에 도움이 되는 HTTP 헤더이다.
+
+`npm install helmet` 을 통해 설치! 후 `import helmet from 'helmet';`을 추가해준다.
+
+그 후, `app.use(helmet());`을 추가해준다. 보안을 위한 것이기 때문에 별 건 없다 ㅎㅎ..
+
+-   원한다면 middleware를 연결을 끊을 수 있다.
+
+```js
+app.use(helmet());
+app.use(morgan('dev'));
+
+const middleware = (req, res, next) => {
+    res.send('not happening');
+};
+
+app.get('/', middleware, handleHome);
+
+app.get('/profile', handleProfile);
+
+app.listen(PORT, handleListening);
+
+// 이 경우, profile은 잘 동작하는 반면, home에서 not happening이 뜬다.
+```
+
+-   cookie parser? body parser?
+
+둘다 middleware이다.
+
+cookie parser는 쿠키를 다룰 수 있고(쿠키에 유저 정보를 저장가능),
+
+body parser는 form 데이터를 서버로 받아와서 활용이 가능하다.
+
+명심할 것은 미들웨어는 위에서 아래로 작동한다는 것!
+
+```js
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(helmet());
+app.use(morgan('dev'));
+
+app.get('/', middleware, handleHome);
+
+app.get('/profile', handleProfile);
+
+app.listen(PORT, handleListening);
+```
