@@ -24,7 +24,7 @@
 
     -   [Udemy Javascript Course](/tutorials/유데미-자바스크립트-정리.md)
 
-    -   [공부](/tutorials/자바스크립트_기초_스터디/01.데이터_타입.md)
+    -   [코어 자바스크립트|데이터 타입](/tutorials/자바스크립트_기초_스터디/01.데이터_타입.md)
 
 *   👩🏻‍💻 Study Record
 
