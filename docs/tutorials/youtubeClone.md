@@ -29,3 +29,21 @@ PayPal, Netflix, Uber, Likedin, Trello, New York Times..
 ## 2.1 What is Express
 
 Express.js는 Node.js에서 작동하는 프레임워크이다.
+
+## 2.2 Installing Express with NPM
+
+디렉토리 이동 `mkdir webtube`
+
+webtube 디렉토리 안으로 이동 `cd webtube`
+
+비주얼 스튜디오 열기 `. code`
+
+index.js 파일 생성 후, 콘솔에 `node index.js ` 입력 후 node.js 실행
+
+-   Express 설치 방법
+
+NPM.js 는 중앙 집권화된 개념인데 node.js와 관련된 모든 package를 넣어놓은 곳이다.
+
+npm은 node.js를 다운받으면 따라온다.
+
+`npm init`
