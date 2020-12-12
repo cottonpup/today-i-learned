@@ -187,3 +187,79 @@ app.listen(PORT, handleListening);
 ```
 
 ## 2.5 ES6 on NodeJS using Babel
+
+[What is Bebel?](https://babeljs.io/docs/en/) 최신의 자바스크립트 코드를 무난한 예전의 자바스크립트 코드로 변환해준다.
+
+-   presets
+
+엄격함의 정도의 따라 presets이 다양하게 존재
+
+```
+Stage 0 - Strawman: just an idea, possible Babel plugin.
+Stage 1 - Proposal: this is worth working on.
+Stage 2 - Draft: initial spec.
+Stage 3 - Candidate: complete spec and initial browser implementations.
+Stage 4 - Finished: will be added to the next yearly release.
+```
+
+터미널에서 babel 설치를 위해 `npm install @babel/node` 입력.
+
+Presets 에서 [env](https://babeljs.io/docs/en/babel-preset-env) 를 사용할 것. 가장 최신이지만 실험적이지는 않은 preset이다.
+
+Presets 설정을 위해 터미널에 `npm install @babel/preset-env` 입력.
+
+```js
+// 더 보기 좋은 코드로 변경 가능!
+import express from 'express';
+// const express = require('express');
+```
+
+.bebelrc파일을 만들고 presets 설정을 추가해준 뒤, package.json에서 scripts 을 변경한다.
+
+```js
+// .bebelrc
+{
+    "presets": ["@babel/preset-env"]
+}
+```
+
+```js
+// package.json
+  "scripts": {
+    "start": "babel-node index.js"
+  }
+```
+
+그 후 `npm install @babel/core`을 통해 babel/core를 설치한다.
+
+다시 npm start를 해준다.
+
+ES6의 새로운 기능인 const를 사용해서 코드를 더 fancy하게 바꿔줄 수 있다.
+
+-   dependency와 별개로 패키지 설치하는 방법
+
+dependency: 프로젝트를 실행하기 위해 의존하는 것.
+
+Nodemon은 Node.js에 기반한 웹 애플리케이션을 개발할 때, 파일에 변경사항이 발생했을 때, 저절로 애플리케이션이 재실행되도록 도와주는 패키지다
+
+Nodemon을 설치하면, 코드를 수정하고 저장(Ctrl+S) 버튼을 눌렀을 때, 애플리케이션이 저절로 실행되게 할 수 있다
+
+이제 `npm install nodemon -D`를 통해 nodemon을 설치해줄 건데 `-D`키워드를 넣어서 dependency와 관련이 없다는 것을 표시해준다.
+
+그러면 package.json에 "devDependencies" 가 자동으로 만들어지고 "scripts"에 "`nodemon --exec` babel-node index.js"을 추가하여 주자.
+
+완료 후, 다시 npm start! 😆
+
+그러면, 저장할 때마다, 아주 간편하게 자동으로 서버를 부를 수 있다.
+
+```js
+// package.json
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+```
+
+## 2.6 Express Core: Middlewares
