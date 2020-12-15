@@ -26,6 +26,8 @@
 
     -   [모던 자바스크립트| 프로토타입](/javascript/prototype.md)
 
-*   👩🏻‍💻 Study Record
+*   👩🏻‍💻 Study Log
+
+    -   [2020-Dec-14](/Study-log/2020-Dec.14.md)
 
 *   🔤 English Study
