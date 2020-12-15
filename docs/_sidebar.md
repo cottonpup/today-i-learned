@@ -28,6 +28,6 @@
 
 *   👩🏻‍💻 Study Log
 
-    -   [2020-Dec-14](docs/Study-log/2020-Dec-14.md)
+    -   [2020-Dec-14](/Study-log/2020-Dec-14.md)
 
 *   🔤 English Study
