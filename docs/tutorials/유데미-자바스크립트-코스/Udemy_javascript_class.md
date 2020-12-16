@@ -135,4 +135,4 @@ console.log(z === window.z); // false
 this keyword/variables: Special variables that is created for every context(every function). this
 keyword is not **static.**
 
-<img width="509" alt="Screen Shot 2020-12-17 at 1 09 14 AM" src="https://user-images.githubusercontent.com/67526014/102376293-d5730b00-4006-11eb-8e3f-93a7eab292df.png">
+<img width="1200" alt="Screen Shot 2020-12-17 at 1 09 14 AM" src="https://user-images.githubusercontent.com/67526014/102376293-d5730b00-4006-11eb-8e3f-93a7eab292df.png">
