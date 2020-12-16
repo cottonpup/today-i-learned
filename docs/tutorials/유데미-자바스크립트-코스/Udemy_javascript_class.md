@@ -66,7 +66,7 @@ printAge();
 Hoisting: Makes some types of variables accessible/ usable in the code before they are actually
 declared.
 
-![picture 1](../../../images/af3eb7c8a563f4d95fd11d9b2e7c6d71c8faa4392b2b2787887012b5864b0c8d.png)
+<img width="1225" alt="Screen Shot 2020-12-17 at 12 09 37 AM" src="https://user-images.githubusercontent.com/67526014/102376213-bd9b8700-4006-11eb-9ba8-1232b735ad03.png">
 
 ## Temporal Dead Zone, Let and const
 
@@ -135,4 +135,4 @@ console.log(z === window.z); // false
 this keyword/variables: Special variables that is created for every context(every function). this
 keyword is not **static.**
 
-![picture 2](../../../images/b354ae7f1647208f9b35706990bc7c5db148409ecef4c8a183e3500e7bedf772.png)
+<img width="509" alt="Screen Shot 2020-12-17 at 1 09 14 AM" src="https://user-images.githubusercontent.com/67526014/102376293-d5730b00-4006-11eb-8e3f-93a7eab292df.png">
