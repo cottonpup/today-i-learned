@@ -32,8 +32,6 @@
 
     -   [2020-Dec-14](/Study-log/2020-Dec-14.md)
 
-    -   [2020-Dec-16](/Study-log/2020-Dec-16.md)
-
 *   🔤 English Study
 
     -   [2020-Dec-15](/English-study/Eng-2020-Dec-15.md)
