@@ -136,3 +136,140 @@ this keyword/variables: Special variables that is created for every context(ever
 keyword is not **static.**
 
 <img width="1200" alt="Screen Shot 2020-12-17 at 1 09 14 AM" src="https://user-images.githubusercontent.com/67526014/102376293-d5730b00-4006-11eb-8e3f-93a7eab292df.png">
+
+# 97
+
+브라우저 콘솔에 `console.log(this);`을 입력하면 `Window 객체`가 출력된다.
+
+```js
+const calcAgeArrow = (birthYear) => {
+    console.log(2037 - birthYear);
+    console.log(this);
+};
+
+calcAgeArrow(1980); // Window / lexical this keyword
+// it uses the this keyword of its parent function or scope
+```
+
+```js
+const jonas = {
+    year: 1991,
+    calcAge: function () {
+        console.log(this);
+        console.log(2037 - this.year);
+    }
+};
+jonas.calcAge(); // 부모객체인 즉, owner인 jonas 객체가 나옴.
+```
+
+# 98
+
+-   **메서드로 화살표 함수는 사용하지 않기**
+
+```js
+///////////////////////////////////////
+// Regular Functions vs. Arrow Functions
+// var firstName = 'Matilda';
+// var를 사용하는 것은 전역객체를 만들기 때문에 꽤나 위험하다.
+// var 변수를 선언하면, greet 메서드에서 undefined가 아닌 마틸다를 지칭할 것이다.
+const jonas = {
+    firstName: 'Jonas',
+    year: 1991,
+    calcAge: function () {
+        // console.log(this);
+        console.log(2037 - this.year);
+
+        // Solution 1
+        // const self = this; // self or that
+        // const isMillenial = function () {
+        //   console.log(self);
+        //   console.log(self.year >= 1981 && self.year <= 1996);
+        // };
+
+        // Solution 2
+        const isMillenial = () => {
+            console.log(this);
+            console.log(this.year >= 1981 && this.year <= 1996);
+        };
+
+        isMillenial();
+    }, // 화살표 함수는 부모의 this keyword를 사용한다.
+    // 따라서, this는 jonas를 가르킨다.
+    greet: () => {
+        console.log(this);
+        console.log(`Hey ${this.firstName}`);
+    }
+};
+jonas.greet();
+// jonas.calcAge();
+```
+
+## Arguments 키워드
+
+추가 arg를 추가하여 사용하는 것이 가능하다. 하지만, Arguments 키워드는 regular function안에서만 존재
+하고, arrow function에선 존재하지 않는다.
+
+```js
+// arguments keyword
+const addExpr = function (a, b) {
+    console.log(arguments);
+    return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 5, 8, 12);
+var addArrow = (a, b) => {
+    console.log(arguments);
+    return a + b;
+};
+addArrow(2, 5, 8);
+```
+
+# 99
+
+```js
+// Objects vs. primitives
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+const me = {
+  name: 'Jonas',
+  age: 30,
+};
+const friend = me;
+friend.age = 27;
+console.log('Friend:', friend); // 'friend': {name: 'Jonas', age: 27}
+console.log('Me', me); // 'Me': {name: 'Jonas', age: 27}
+Primitive data types: number, string, boolean, undefined, null, symbol. (Primitive type) => Get stored in `the call stack`
+Objects: object literal, arrays, functions..many more. (Reference type) => Get stored in `the memory heap`.
+```
+
+It's not true to say const are immutable. In fact, that is only true for primitive values, but not
+for reference values.
+
+# 100
+
+```js
+## Object.assign
+
+이 기술은 오리지널을 그대로 카피할 수 있게 해준다. 그러나, 오직 first level 에서만 가능하다는 문제가 존재한다. 즉, 오직 shallow copy만 가능하다.
+
+## Manipulation the copied object with Push method
+
+// Copying objects
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+console.log('Before marriage:', jessica2);
+console.log('After marriage: ', jessicaCopy);
+```
+
+외부 라이브러리인 Lo-Dash를 통해서도 깊은 복사가 가능하다!
