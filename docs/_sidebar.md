@@ -4,7 +4,7 @@
 
   - [**[이론정리 📝]** 클래스](/javascript/class.md)
 
-  - [**[지식습득 🧐]** focus API](/Study-log/2020-Dec-14.md)
+  - [**[지식습득 🧐]** Today I Learned](/Study-log/2020-Dec-14.md)
 
 * 🚂 HTML
 
