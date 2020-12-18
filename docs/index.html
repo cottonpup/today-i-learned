@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Emily's blog</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta name="description" content="Description" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-        <link rel="stylesheet" href="./style/navbar.css" />
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
-    </head>
-    <body>
-        <div id="app"></div>
-        <script>
-            window.$docsify = {
-                el: '#app',
-                name: 'Today I Learned',
-                repo: 'https://github.com/EmilyLee1206',
-                loadSidebar: true,
-                subMaxLevel: 2,
-                maxLevel: 4,
-                auto2top: true,
-                alias: {
-                    '/.*/_sidebar.md': '/_sidebar.md'
-                },
-                coverpage: true,
-                pagination: {
-                    previousText: 'Previous',
-                    nextText: 'Next'
-                },
-                search: 'auto',
-                // search: {
-                //     maxAge: 86400000,
-                //     paths: 'auto',
-                //     placeholder: '찾고싶은 내용이 있나요?',
-                //     noData: '검색 결과가 없습니다 😢',
-                //     depth: 2,
-                //     hideOtherSidebarContent: false
-                // },
-                disqus: 'Emily'
-            };
-        </script>
-        <!-- Docsify v4 -->
-        <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-        <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-        <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-        <script src="//unpkg.com/docsify-copy-code@2"></script>
-        <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-        <!-- <script src="//unpkg.com/docsify/lib/plugins/search.js"></script> -->
-        <script src="//unpkg.com/docsify/lib/plugins/disqus.min.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Emily's blog</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="stylesheet" href="./style/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      window.$docsify = {
+        el: '#app',
+        name: 'Today I Learned',
+        repo: 'https://github.com/EmilyLee1206',
+        loadSidebar: true,
+        subMaxLevel: 2,
+        maxLevel: 4,
+        auto2top: true,
+        alias: {
+          '/.*/_sidebar.md': '/_sidebar.md'
+        },
+        coverpage: true,
+        pagination: {
+          previousText: 'Previous',
+          nextText: 'Next'
+        },
+        search: 'auto',
+        // search: {
+        //     maxAge: 86400000,
+        //     paths: 'auto',
+        //     placeholder: '찾고싶은 내용이 있나요?',
+        //     noData: '검색 결과가 없습니다 😢',
+        //     depth: 2,
+        //     hideOtherSidebarContent: false
+        // },
+        disqus: 'Emily'
+      };
+    </script>
+    <!-- Docsify v4 -->
+    <!-- docsify (latest v4.x.x)-->
+    <!-- docsify-tabs (latest v1.x.x) -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/docsify-copy-code@2"></script>
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <!-- <script src="//unpkg.com/docsify/lib/plugins/search.js"></script> -->
+    <script src="//unpkg.com/docsify/lib/plugins/disqus.min.js"></script>
+  </body>
 </html>
