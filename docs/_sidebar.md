@@ -2,14 +2,14 @@
 
 * 🍊 Javascript
 
-  - [[이론정리 📝] 클래스](/javascript/class.md)
+  - [**[이론정리 📝]** 클래스](/javascript/class.md)
 
-  - [[지식습득 🧐] focus API](/Study-log/2020-Dec-14.md)
+  - [**[지식습득 🧐]** focus API](/Study-log/2020-Dec-14.md)
 
 * 🚂 HTML
 
-  - [[Info 👻] Script 태그의 위치](/html/script태그의_위치.md)
-  - [[Info 👻] textContent vs innerText vs innerHTML](/html/../../html/textcontent_innertext_innerhtml.md)
+  - [**[Info 👻]** Script 태그의 위치](/html/script태그의_위치.md)
+  - [**[Info 👻]** textContent vs innerText vs innerHTML](/html/../../html/textcontent_innertext_innerhtml.md)
 
 * 💅 CSS
 
