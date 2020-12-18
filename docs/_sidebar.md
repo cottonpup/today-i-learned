@@ -2,7 +2,7 @@
 
 * 👩🏻‍💻 Study Log
 
-- [**👩🏻‍💻 Study Log**](/Study-log/study-log.md)
+  - [**👩🏻‍💻 Study Log**](/Study-log/study-log.md)
 
 - 🍊 Javascript
 
