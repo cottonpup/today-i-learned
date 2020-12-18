@@ -8,7 +8,7 @@
 
   - [**[📝 이론정리]** 클래스](/javascript/class.md)
 
-  - [**[🧐 지식습득]** Today I Learned](/Study-log/2020-Dec-14.md)
+  - [**[👻 Info]** Today I Learned](/Study-log/2020-Dec-14.md)
 
 - 🚂 HTML
 
