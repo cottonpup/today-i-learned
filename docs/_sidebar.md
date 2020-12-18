@@ -33,10 +33,4 @@
 
 * 🔤 English Study
 
-  - [2020-Dec-15](/English-study/Eng-2020-Dec-15.md)
-
-  - [2020-Dec-16](/English-study/Eng-2020-Dec-16.md)
-
-  - [2020-Dec-17](/English-study/Eng-2020-Dec-17.md)
-
-  - [2020-Dec-18](/English-study/Eng-2020-Dec-18.md)
+  - [데일리 영어학습](/English-study/Eng-2020-Dec-15.md)
