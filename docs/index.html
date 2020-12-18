@@ -34,6 +34,7 @@
           previousText: 'Previous',
           nextText: 'Next'
         },
+        plugins: [EditOnGithubPlugin.create(docBase, docEditBase, title)],
         search: 'auto',
         // search: {
         //     maxAge: 86400000,
@@ -49,6 +50,8 @@
     <!-- Docsify v4 -->
     <!-- docsify (latest v4.x.x)-->
     <!-- docsify-tabs (latest v1.x.x) -->
+    <script src="//unpkg.com/docsify-algolia-search-plugin"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
