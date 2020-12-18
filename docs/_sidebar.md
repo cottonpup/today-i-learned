@@ -2,13 +2,11 @@
 
 * 👩🏻‍💻 Study Log
 
-  - [**👩🏻‍💻 Study Log**](/Study-log/study-log.md)
-
 - 🍊 Javascript
 
   - [**[📝 이론정리]** 클래스](/javascript/class.md)
 
-  - [**[👻 Info]** Today I Learned](/Study-log/2020-Dec-14.md)
+  - [**[👻 Info]** `HTMLElement.focus()`](/Study-log/2020-Dec-14.md)
 
 - 🚂 HTML
 
