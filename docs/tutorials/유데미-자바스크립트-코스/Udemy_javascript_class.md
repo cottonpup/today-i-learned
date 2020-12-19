@@ -607,3 +607,46 @@ restaurant.orderPizza('mushrooms');
 ```
 
 # 107
+
+# 107. Short Circuiting (&& and ||)
+
+```js
+///////////////////////////////////////
+// Short Circuiting (&& and ||)
+console.log('---- OR ----');
+// Use ANY data type, return ANY data type, short-circuiting (truthy만 평가!)
+console.log(3 || 'Jonas'); // 3
+console.log('' || 'Jonas'); // 'Jonas'
+console.log(true || 0); // true
+console.log(undefined || null); // null
+// undefined 는 falsy value!
+// null 도 falsy value! Short Circuiting이 없다! 따라서 두번째 값 반환
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); // 'Hello' - first truthy value
+
+restaurant.numGuests = 0;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1); // 10
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2); // 10
+console.log('---- AND ----');
+// When the first value is falsy, then returns that falsy value.
+// When it is truthy, the last value returns.
+console.log(0 && 'Jonas'); // 0
+console.log(7 && 'Jonas'); // 'Jonas'
+console.log('Hello' && 23 && null && 'jonas'); // null
+
+// if it is truth value, the evaluation continues.
+// And operator will return the first falsy value or the last value if all of them are truthy.
+
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+0 && console.log('Order Pizza'); // Nothing happened
+1 && console.log('Order Pizza'); // Order Pizza
+///////////////////////////////////////
+```
