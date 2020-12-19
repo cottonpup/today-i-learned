@@ -648,3 +648,17 @@ restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 1 && console.log('Order Pizza'); // Order Pizza
 ///////////////////////////////////////
 ```
+
+# 108. The Nullish Coalescing Operator (??)
+
+```js
+///////////////////////////////////////
+// The Nullish Coalescing Operator
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+// Nullish: null and undefined (NOT 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+///////////////////////////////////////
+```
