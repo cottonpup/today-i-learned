@@ -1,6 +1,6 @@
 [2020.Dec.16]
 
-# 91
+# 91. Execution Contexts and The Call Stack
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
 
@@ -42,7 +42,7 @@ call stack은 함수가 호출된 순서이다.
 
 scope chain은 함수의 호출 순서와는 관련이 없다.
 
-# 93
+# 93. Scoping in Practice
 
 ```js
 function printAge() {
@@ -63,7 +63,7 @@ printAge();
 
 다른 스코프에 있는 경우, 변수의 이름을 번복해도 상관이 없다!
 
-# 94
+# 94. Variable Environment: Hoisting and The TDZ
 
 Hoisting: Makes some types of variables accessible/ usable in the code before
 they are actually declared.
@@ -78,7 +78,7 @@ in any way.
 Why TDZ? Makes it easier to avoid and catch errors: accessing variables before
 declaration is bad practice and should be avoided.
 
-# 95
+# 95. Hoisting and TDZ in Practice
 
 ```js
 console.log(me); // hoisting이 일어나지만, undefined
@@ -133,14 +133,14 @@ console.log(y === window.y); // false
 console.log(z === window.z); // false
 ```
 
-# 96
+# 96. The this Keyword
 
 this keyword/variables: Special variables that is created for every
 context(every function). this keyword is not **static.**
 
 <img width="1200" alt="Screen Shot 2020-12-17 at 1 09 14 AM" src="https://user-images.githubusercontent.com/67526014/102376293-d5730b00-4006-11eb-8e3f-93a7eab292df.png">
 
-# 97
+# 97. The this Keyword in Practice
 
 브라우저 콘솔에 `console.log(this);`을 입력하면 `Window 객체`가 출력된다.
 
@@ -165,7 +165,7 @@ const jonas = {
 jonas.calcAge(); // 부모객체인 즉, owner인 jonas 객체가 나옴.
 ```
 
-# 98
+# 98. Regular Functions vs. Arrow Functions
 
 - **메서드로 화살표 함수는 사용하지 않기**
 
@@ -227,7 +227,7 @@ var addArrow = (a, b) => {
 addArrow(2, 5, 8);
 ```
 
-# 99
+# 99. Primitives vs. Objects (Primitive vs. Reference Types)
 
 ```js
 // Objects vs. primitives
@@ -251,7 +251,7 @@ Objects: object literal, arrays, functions..many more. (Reference type) => Get s
 It's not true to say const are immutable. In fact, that is only true for
 primitive values, but not for reference values.
 
-# 100
+# 100. Primitives vs. Objects in Practice
 
 ```js
 ## Object.assign
@@ -279,7 +279,7 @@ console.log('After marriage: ', jessicaCopy);
 
 [2020.Dec.18]
 
-# 101
+# 103. Destructing Arrays
 
 ```js
 ///////////////////////////////////////
@@ -520,7 +520,7 @@ console.log(restaurantCopy.name);
 console.log(restaurant.name);
 ```
 
-# 106
+# 106 Rest Pattern and Parameters
 
 ```js
 ///////////////////////////////////////
@@ -605,8 +605,6 @@ restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');
 ///////////////////////////////////////
 ```
-
-# 107
 
 # 107. Short Circuiting (&& and ||)
 
