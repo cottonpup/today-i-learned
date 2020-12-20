@@ -2,11 +2,11 @@
 
 * 👩🏻‍💻 Study Log
 
+  - [10시간 챌린지(2020-Dec-21 - 25)](/Study-log/10hours_study.md)
+
 - 🍊 Javascript
 
   - [**[📝 이론정리]** 클래스](/javascript/class.md)
-
-  - [**[👻 Info]** `HTMLElement.focus()`](/Study-log/2020-Dec-14.md)
 
 - 🚂 HTML
 
