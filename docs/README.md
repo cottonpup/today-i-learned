@@ -1,5 +1,4 @@
-  [![NPM](https://img.shields.io/npm/v/docsify-example-panels.svg?style=flat-square)](https://www.npmjs.com/package/docsify-example-panels) ![TIL](https://img.shields.io/badge/TIL-Today%20I%20Learned-brightgreen)
-{: .text-center }
+ <p style="text-align: center;"> [![NPM](https://img.shields.io/npm/v/docsify-example-panels.svg?style=flat-square)](https://www.npmjs.com/package/docsify-example-panels) ![TIL](https://img.shields.io/badge/TIL-Today%20I%20Learned-brightgreen) </p>
 
 # Home
 
