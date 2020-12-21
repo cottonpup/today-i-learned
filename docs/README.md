@@ -1,3 +1,5 @@
+[![NPM](https://img.shields.io/npm/v/docsify-example-panels.svg?style=flat-square)](https://www.npmjs.com/package/docsify-example-panels)
+
 # Home
 
 > 오늘 배운 것들을 하나씩 기록합니다.
