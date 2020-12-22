@@ -214,6 +214,10 @@ jonas.greet();
 추가 arg를 추가하여 사용하는 것이 가능하다. 하지만, Arguments 키워드는 regular
 function안에서만 존재하고, arrow function에선 존재하지 않는다.
 
+arguments란 모든 아규먼트를 유사배열 형태로 참조하는 값이다.
+
+하지만, ES6에서 스프레드 연산자가 추가된 뒤 쓰지 않는다.
+
 ```js
 // arguments keyword
 const addExpr = function (a, b) {
@@ -926,3 +930,153 @@ else console.log('user array empty');
 ```
 
 # 113. Looping Objects: Object Keys, Values, and Entries
+
+```js
+///////////////////////////////////////
+// Looping Objects: Object Keys, Values, and Entries
+
+// Property NAMES
+for (const day of Object.keys(openingHours)) {
+  console.log(day); // thu, fri, sat
+}
+
+const properties = Object.keys(openingHours); // ['thu', 'fri', 'sat'];
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+// Property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+/*
+[
+  { open: 12, close: 22 },
+  { open: 11, close: 23 },
+  { open: 0, close: 24 }
+]
+*/
+
+// Entire object
+// object 랑 array랑 방법이 다르기 때문에 주의!
+
+const entries = Object.entries(openingHours);
+// console.log(entries);
+// the value needs destructing because the value itself is also an object.
+// [key, value]
+for (const [day, { open, close }] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
+```
+
+# 114. Coding Challenge #2
+
+```js
+// Coding Challenge #2
+
+/* 
+Let's continue with our football betting app!
+1. Loop over the game.scored array and print each player name to the console,
+ along with the goal number (Example: "Goal 1: Lewandowski")
+
+2. Use a loop to calculate the average odd and
+ log it to the console 
+ (We already studied how to calculate averages, you can go check if you don't remember)
+
+3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+      Odd of victory Bayern Munich: 1.33
+      Odd of draw: 3.25
+      Odd of victory Borrussia Dortmund: 6.5
+
+Get the team names directly from the game object, don't hardcode them (except for "draw"). HINT: Note how the odds and the game objects have the same property names 😉
+BONUS: Create an object called 'scorers' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }
+GOOD LUCK 😀
+*/
+```
+
+```js
+// 1.
+for (const [i, player] of game.scored.entries())
+  console.log(`Goal ${i + 1}: ${player}`);
+// 2.
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) average += odd;
+average /= odds.length;
+console.log(average);
+// 3.
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
+// Odd of victory Bayern Munich: 1.33
+// Odd of draw: 3.25
+// Odd of victory Borrussia Dortmund: 6.5
+// BONUS
+// So the solution is to loop over the array, and add the array elements as object properties, and then increase the count as we encounter a new occurence of a certain element
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+```
+
+[객체 기본](https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Basics)
+
+# 115. Sets
+
+```js
+// Sets
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet); // 중복은 제외
+console.log(new Set('Jonas')); // 5개의 각각의 글자 출력
+console.log(new Set()); // set could be empty
+console.log(ordersSet.size); // not length
+console.log(ordersSet.has('Pizza')); // check if it is in there
+console.log(ordersSet.has('Bread'));
+console.log(ordersSet[0]); // undefined
+// In sets, there are no indexes.
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.clear(); // clear everything in the set
+console.log(ordersSet);
+// sets are iterables. we can loop sets!
+for (const order of ordersSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = new Set(staff); // set으로 출력
+const staffUnique = [...new Set(staff)]; // 새로운 배열로 출력
+console.log(staffUnique);
+// 우리가 얼마나 많이 고유 아이템을 가지고 있는지 알고싶다면!
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+// see how many different letters there
+console.log(new Set('jonasschmedtmann').size);
+*/
+```
+
+# 116. Maps: Fundamentals
+
+```js
+
+```
