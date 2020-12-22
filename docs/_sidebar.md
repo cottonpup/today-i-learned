@@ -6,6 +6,8 @@
 
   - [**[📝 이론정리]** 클래스](/javascript/class.md)
 
+- 💠 React
+
 - 🚂 HTML
 
   - [**[👻 Info]** Script 태그의 위치](/html/script태그의_위치.md)
@@ -35,4 +37,4 @@
 
 - 🔤 English Study
 
-  - [데일리 영어학습](/English-study/Eng-2020-Dec-15.md)
+  - [데일리 영어학습](/English-study/daily-english-study.md)
