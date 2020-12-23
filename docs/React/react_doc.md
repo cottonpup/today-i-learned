@@ -234,3 +234,37 @@ function withdraw(account, amount) {
 ```
 
 # 5. State와 생명주기
+
+## 함수에서 클래스로 변환하기
+
+```js
+class Clock extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.props.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
+```
+
+## 클래스에 로컬 State 추가하기
+
+컴포넌트의 State란? State란 app에서 변경할 수 있는 객체를 뜻합니다. 각각의 컴포
+넌트는 이러한 State를 가질 수 있습니다. State 객체가 변경될 때마다, 컴포넌트는다
+시 렌더링됩니다.
+
+클래스 컴포넌트는 항상 props로 기본 constructor를 호출해야 합니다.
+
+## 생명주기 메서드를 클래스에 추가하기
+
+### 생명주기 메서드
+
+`마운팅`: 리액트가 처음으로 컴포넌트를 렌더링하려고 했을 때, 코드에 따라 초기
+DOM을 만드는 것을 뜻합니다.
+
+`언마운팅`: 생명주기에 있어서 컴포넌트가 DOM에서 제거될 때를 뜻합니다. 리액트는
+컴포넌트를 언마운팅 할 때, 오직 한개의 빌트인 메서드인
+`componentWillUnmount()`를 호출합니다.
