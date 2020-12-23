@@ -73,6 +73,44 @@ Babel은 JSX를 React.createElement() 호출로 컴파일합니다.
 
 # 3. 엘리먼트 렌더링
 
+브라우저 DOM 엘리먼트와 달리 React 엘리먼트는 일반 객체이며(plain object) 쉽게생
+성할 수 있습니다. React DOM은 React 엘리먼트와 일치하도록 DOM을 업데이트합니다 .
+
+## DOM에 엘리먼트 렌더링하기
+
+HTML 파일 어딘가에 <div>가 있다고 가정해 봅시다.
+
+이 안에 들어가는 모든 엘리먼트를 React DOM에서 관리하기 때문에 이것을 “루트
+(root)” DOM 노드라고 부릅니다.
+
+React 엘리먼트를 루트 DOM 노드에 렌더링하려면 둘 다 ReactDOM.render()로 전달하면
+됩니다.
+
 # 4. Component와 Props
+
+개념적으로 컴포넌트는 JavaScript 함수와 유사합니다. “props”라고 하는 임의의 입력
+을 받은 후, 화면에 어떻게 표시되는지를 기술하는 React 엘리먼트를 반환합니다.
+
+## 함수 컴포넌트와 클래스 컴포넌트
+
+함수 컴포넌트
+
+```js
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+
+클래스 컴포넌트
+
+```js
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+```
+
+## 컴포넌트 렌더링
 
 # 5. State와 생명주기
