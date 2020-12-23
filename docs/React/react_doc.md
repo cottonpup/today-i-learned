@@ -113,4 +113,121 @@ class Welcome extends React.Component {
 
 ## 컴포넌트 렌더링
 
+```js
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+// React 엘리먼트는 사용자 정의 컴포넌트로도 나타낼 수 있다.
+const element = <Welcome name="Sara" />;
+// 주의: 컴포넌트의 이름은 항상 대문자로 시작합니다.
+// <Welcome />은 컴포넌트를 나타내며 범위 안에 Welcome이 있어야 합니다.
+ReactDOM.render(element, document.getElementById('root'));
+```
+
+React가 사용자 정의 컴포넌트로 작성한 엘리먼트를 발견하면 JSX 어트리뷰트와 자식
+을 해당 컴포넌트에 단일 객체로 전달합니다. 이 객체를 “props”라고 합니다.
+
+1. `<Welcome name="Sara" />`엘리먼트로 `ReactDOM.render()`를 호출합니다.
+2. React는 `{name: 'Sara'}`를 props로 하여 Welcome 컴포넌트를 호출합니다.
+3. Welcome 컴포넌트는 결과적으로 `<h1>Hello, Sara</h1>` 엘리먼트를 반환합니다.
+4. React DOM은 `<h1>Hello, Sara</h1>` 엘리먼트와 일치하도록 DOM을 효율적으로 업
+   데이트합니다.
+
+## 컴포넌트 합성
+
+컴포넌트는 자신의 출력에 다른 컴포넌트를 참조할 수 있습니다.
+
+React 앱에서는 버튼 , 폼, 다이얼로그, 화면 등의 모든 것들이 흔히 컴포넌트로 표현
+됩니다.
+
+예를 들어 Welcome을 여러 번 렌더링하는 App 컴포넌트를 만들 수 있습니다.
+
+```js
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+function App() {
+  return (
+    <div>
+      <Welcome name="Sara" />
+      <Welcome name="Cahal" />
+      <Welcome name="Edite" />
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
+// Hello, Sara
+// Hello, Cahal
+// Hello, Edite
+```
+
+## 컴포넌트 추출
+
+여러 번 사용되거나, UI 일부가 자체적으로 복잡한 경우에는, 별도의 컴포넌트로 만드
+는 게 좋습니다.
+
+```js
+function formatDate(date) {
+  return date.toLocaleDateString();
+}
+
+function Avatar(props) {
+  return (
+    <img className="Avatar" src={props.user.avatarUrl} alt={props.user.name} />
+  );
+}
+
+function UserInfo(props) {
+  return (
+    <div className="UserInfo">
+      <Avatar user={props.user} />
+      <div className="UserInfo-name">{props.user.name}</div>
+    </div>
+  );
+}
+
+function Comment(props) {
+  return (
+    <div className="Comment">
+      <UserInfo user={props.author} />
+      <div className="Comment-text">{props.text}</div>
+      <div className="Comment-date">{formatDate(props.date)}</div>
+    </div>
+  );
+}
+
+const comment = {
+  date: new Date(),
+  text: 'I hope you enjoy learning React!',
+  author: {
+    name: 'Hello Kitty',
+    avatarUrl: 'https://placekitten.com/g/64/64'
+  }
+};
+ReactDOM.render(
+  <Comment date={comment.date} text={comment.text} author={comment.author} />,
+  document.getElementById('root')
+);
+```
+
+## props는 읽기 전용입니다.
+
+모든 React 컴포넌트는 자신의 props를 다룰 때 반드시 **순수 함수**처럼 동작해야합
+니다.
+
+```js
+// 순수 함수!
+function sum(a, b) {
+  return a + b;
+}
+
+// 순수 함수가 아님!
+function withdraw(account, amount) {
+  account.total -= amount;
+}
+```
+
 # 5. State와 생명주기
