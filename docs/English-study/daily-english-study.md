@@ -378,3 +378,50 @@ exteremely easy
 not correct or exact
 
 </details>
+
+<details>
+<summary>2020.Dec.23</summary>
+
+## to pull a stunt
+
+to do sth unusual or dangerous feat; usually done to gain attention
+
+## ludicrous
+
+so foolish, unreasonable, or out of place as to be amusing or deserving to be
+laughed at
+
+## if the shoe was on the other foot
+
+if I were in your place
+
+## a licorice
+
+the sweet root of a plant, a black candy
+
+## a treat
+
+something very pleasant and enjoyable, especially something that you give
+somebody or do for them
+
+## mildly surprised
+
+surprised a little bit
+
+## mildly irritated
+
+the state of being slightly annoyed
+
+## loosely based on
+
+connected to a small degree
+
+## a broad accent
+
+a strong accent
+
+## to be in broad agreement with sm1
+
+generally agree with sm1
+
+</details>
