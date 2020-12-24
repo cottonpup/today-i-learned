@@ -4,7 +4,19 @@
 
 - 🍊 Javascript
 
-  - [**[📝 이론정리]** 클래스](/javascript/class.md)
+  - 🧚‍♀️ 2020 Studies
+
+    - [**[Nomad Coder]** Youtube Clone](/tutorials/youtubeClone.md)
+
+    - [**[Udemy]** Udemy Javascript Course](/tutorials/유데미-자바스크립트-코스/Udemy_javascript_class.md)
+
+    - [**[스터디 활동]** 데이터 타입](/tutorials/자바스크립트_기초_스터디/01.데이터_타입.md)
+
+    - [**[스터디 활동]** 프로토타입](/javascript/prototype.md)
+
+    - [**[스터디 활동]** 클래스](/tutorials/자바스크립트_기초_스터디/07.클래스.md)
+
+    - [**[📝 이론정리]** 클래스](/javascript/class.md)
 
 - 💠 React
 
@@ -23,20 +35,6 @@
 - 🎞 Git
 
 - 🏗 Build tools
-
-- 📝 Tutorials / Book Study
-
-  - 🧚‍♀️ 2020 Studies
-
-    - [**[Nomad Coder]** Youtube Clone](/tutorials/youtubeClone.md)
-
-    - [**[Udemy]** Udemy Javascript Course](/tutorials/유데미-자바스크립트-코스/Udemy_javascript_class.md)
-
-    - [**[스터디 활동]** 데이터 타입](/tutorials/자바스크립트_기초_스터디/01.데이터_타입.md)
-
-    - [**[스터디 활동]** 프로토타입](/javascript/prototype.md)
-
-    - [**[스터디 활동]** 클래스](/tutorials/자바스크립트_기초_스터디/07.클래스.md)
 
 - 🔤 English Study
 
