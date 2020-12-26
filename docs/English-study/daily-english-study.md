@@ -489,3 +489,40 @@ extremely happy
 unpleasant (formal)
 
 </details>
+
+<details>
+<summary>2020.Dec.26</summary>
+
+## highly educated
+
+very educated
+
+## blatantly obvious
+
+very clear
+
+## rural area
+
+area in the countryside
+
+## urban area
+
+area in a town or city
+
+## remote area
+
+area a long way from towns and cities
+
+## surrounding area
+
+area around a place
+
+## outlying areas
+
+areas far from the center of a town, village etc
+
+## residential area
+
+a part of a town where people live
+
+</details>
