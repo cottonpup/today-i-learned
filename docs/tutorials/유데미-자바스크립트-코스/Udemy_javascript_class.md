@@ -1152,3 +1152,5 @@ console.log([...question]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
 ```
+
+# 118. Summary: Which Data Structure to Use?
