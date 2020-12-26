@@ -1154,3 +1154,5 @@ console.log([...question.values()]);
 ```
 
 # 118. Summary: Which Data Structure to Use?
+
+![picture 1](../../../images/44bb31eb370ff9b708494abbf34058ae13120916ce5fcf6e70d57c4331626bdf.png)
