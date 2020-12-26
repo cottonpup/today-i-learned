@@ -18,7 +18,7 @@
 
     - [**[📝 이론정리]** 클래스](/javascript/class.md)
 
-    - **[FreeCodeCamp]**
+    - **[FreeCodeCamp]** 자바스크립트
 
       - [**[FreeCodeCamp]** ES6](/javascript/freedCodeCamp_ES6.md)
 
@@ -30,7 +30,7 @@
 
   - [**[스터디 활동]** 아묻따! 일단 리액트 시작하기!](/React/Getting-start-react.md)
 
-  - **[FreeCodeCamp]**
+  - **[FreeCodeCamp]** 리액트
 
     - [**[FreeCodeCamp]** React](/React/freedCodeCamp_React.md)
 
