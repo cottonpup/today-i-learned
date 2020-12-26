@@ -425,3 +425,67 @@ a strong accent
 generally agree with sm1
 
 </details>
+<details>
+<summary>2020.Dec.25</summary>
+
+## issue an apology
+
+make an official public apology
+
+## my sincere apologies
+
+used when you feel very sorry (apology)
+
+## spoil your appetite
+
+make you not feel like eating a meal
+
+## get an appointment
+
+suceed in arranging an appointment
+
+## rural area
+
+area in the countryside
+
+## a dropout
+
+a person that quits school before graduation
+
+## I'm all yours.
+
+I'm at your disposal
+
+## ridiculous
+
+deserving or inviting derision or mockery; absurd; extravagantly humorous
+
+## soot
+
+black material found inside a chimney (mass noun, no article)
+
+## to hang up on
+
+to end a telephone conversation by abruptly cutting the connection
+
+## to be in broad agreement with sm1
+
+generally agree with sm1
+
+## mitigating circumstances
+
+circumstances that lessen the blame
+
+## mitigating factors
+
+factors that lessen the blame
+
+## deliriously happy
+
+extremely happy
+
+## inclement weather
+
+unpleasant (formal)
+
+</details>
