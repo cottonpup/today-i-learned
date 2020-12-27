@@ -1155,7 +1155,7 @@ console.log([...question.values()]);
 
 # 118. Summary: Which Data Structure to Use?
 
-![picture 1](../../../images/44bb31eb370ff9b708494abbf34058ae13120916ce5fcf6e70d57c4331626bdf.png)
+<img width="1280" alt="Screen Shot 2020-12-26 at 2 53 59 PM" src="https://user-images.githubusercontent.com/67526014/103150736-1cf15800-47ba-11eb-8b67-4abec437f3d0.png">
 
 # 119. Coding Challenge #3
 
@@ -1211,22 +1211,251 @@ console.log(airline.indexOf('portugal')); // case sensitive
 
 console.log(airline.slice(4)); // 부분을 반환. 마지막 숫자는 포함이 되지 않는다. 숫자의 바로 직전 스트링만!
 console.log(airline.slice(4, 7));
+// 첫번째 단어를 반환하기.
 console.log(airline.slice(0, airline.indexOf(' ')));
+// 마지막 단어를 반환하기
 console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+// 거꾸로 세서 단어 반환하기
 console.log(airline.slice(-2));
-console.log(airline.slice(1, -1));
+console.log(airline.slice(1, -1)); // AP Air Portuga
+
 const checkMiddleSeat = function (seat) {
   // B and E are middle seats
   const s = seat.slice(-1);
   if (s === 'B' || s === 'E') console.log('You got the middle seat 😬');
   else console.log('You got lucky 😎');
 };
+
 checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
-console.log(new String('jonas'));
-console.log(typeof new String('jonas'));
-console.log(typeof new String('jonas').slice(1));
+
+/*
+ this process is called boxing
+
+because it basically takes our string
+
+and puts it into a box
+
+which is the object.
 */
 
+console.log(new String('jonas'));
+console.log(typeof new String('jonas').slice(1)); // string
+// the object is converted back to a regular string primitive.
+console.log(typeof new String('jonas')); // object
+*/
+
+```
+
+# 120 Working With Strings
+
+```js
+///////////////////////////////////////
+
+// Working With Strings - Part 2
+const airline = 'TAP Air Portugal';
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+const passenger = 'jOnAS'; // Jonas
+const passengerLower = passenger.toLowerCase();
+
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Comparing emails
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n';
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// 한번에 해버리기!
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// replacing
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+// 자바스크립트에서 replaceAll 은 존재하지 않는다!
+// console.log(announcement.replaceAll('door', 'gate'));
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Airb'));
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW ARirbus family');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+```
+
+# 121 Working With Strings - Part 3
+
+```js
+///////////////////////////////////////
+// Working With Strings - Part 3
+// Split and join
+console.log('a+very+nice+string'.split('+'));
+// [ 'a', 'very', 'nice', 'string' ]
+// 성과 이름 분리해서 추출하기
+console.log('Jonas Schmedtmann'.split(' '));
+// [ 'Jonas', 'Schmedtmann' ]
+
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+// Mr. Jonas SCHMEDTMANN
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+capitalizeName('jessica ann smith davis');
+// Jessica Ann Smith Davis
+capitalizeName('jonas schmedtmann');
+// Jonas Schmedtmann
+
+// Padding
+// padStart()와 padEnd()의 인자 수는 string의 길이보다 커야한다. 
+// 만약 인자 수가 string의 길이보다 작을 경우, 아무 일도 일어나지 않는다!
+const message = 'Go to gate 23!';
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+// ++++++Go to gate 23!++++++++++
+console.log('Jonas'.padStart(20, '+').padEnd(30, '+'));
+// +++++++++++++++Jonas++++++++++
+
+const maskCreditCard = function (number) {
+  // how to convert a number to a string
+ // const str = String(number);
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+console.log(maskCreditCard(64637836));
+console.log(maskCreditCard(43378463864647384));
+console.log(maskCreditCard('334859493847755774747'));
+
+// Repeat
+const message2 = 'Bad waether... All Departues Delayed... ';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'🛩'.repeat(n)}`);
+};
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
+
+```
+
+# 122 Coding Challenge #4
+
+```js
+// Coding Challenge #4
+
+/* 
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
+The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
+THIS TEST DATA (pasted to textarea)
+
+underscore_case
+ first_name
+Some_Variable 
+  calculate_AGE
+delayed_departure
+
+SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+underscoreCase      ✅
+firstName           ✅✅
+someVariable        ✅✅✅
+calculateAge        ✅✅✅✅
+delayedDeparture    ✅✅✅✅✅
+
+HINT 1: Remember which character defines a new line in the textarea 😉
+HINT 2: The solution only needs to work for a variable made out of 2 words, like a_b
+HINT 3: Start without worrying about the ✅. Tackle that only after you have the variable name conversion working 😉
+HINT 4: This challenge is difficult on purpose, so start watching the solution in case you're stuck. Then pause and continue!
+Afterwards, test with your own test data!
+GOOD LUCK 😀
+*/
+
+
+/*
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
+});
+*/
+
+```
+
+# 126. Default Parameters
+
+```js
+'use strict';
+
+/*
+///////////////////////////////////////
+// Default Parameters
+const bookings = [];
+const createBooking = function (
+  flightNum,
+  numPassengers = 1,
+  price = 199 * numPassengers
+) {
+  // ES5
+  // numPassengers = numPassengers || 1;
+  // price = price || 199;
+  const booking = {
+    flightNum,
+    numPassengers,
+    price,
+  };
+  console.log(booking);
+  bookings.push(booking);
+};
+
+createBooking('LH123');
+createBooking('LH123', 2, 800);
+createBooking('LH123', 2);
+createBooking('LH123', 5);
+createBooking('LH123', undefined, 1000);
+
+///////////////////////////////////////
 ```
