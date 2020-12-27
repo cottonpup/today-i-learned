@@ -314,7 +314,7 @@ _Virtual DOM_ 은 그냥 메모리에 가상으로 존재하는 DOM 으로서 �
 
 ReactDOM. render()?: 넘겨주는 컨테이너 노드의 콘텐츠의 조작을 가능케 해줍니다.
 
-## 4. JSX의 기본 규칙 알아보기
+## 04. JSX의 기본 규칙 알아보기
 
 JSX? JSX 는 리액트에서 생김새를 정의할 때, 사용하는 문법입니다. 얼핏보면 HTML 같
 이 생겼지만 실제로는 JavaScript 입니다.
@@ -432,6 +432,142 @@ export default App;
 />;
 ```
 
-## 5. props 를 통해 컴포넌트에게 값 전달하기
+## 05. props 를 통해 컴포넌트에게 값 전달하기
 
-## 6. 조건부 렌더링
+컴포넌트에게 전달되는 props 는 파라미터를 통하여 조회 할 수 있습니다.
+
+props 는 객체 형태로 전달되며, 만약 name 값을 조회하고 싶다면 props.name 을 조회
+하면 됩니다.
+
+### App.js
+
+```js
+import React from 'react';
+import Hello from './Hello';
+
+function App() {
+  return <Hello name="react" />;
+}
+
+export default App;
+```
+
+### Hello.js
+
+``` js
+import React from 'react';
+
+function Hello(props) {
+  return <div>안녕하세요 {props.name}</div>
+}
+
+export default Hello;
+```
+
+- 여러개의 props, 비구조화 할당
+
+### App.js
+
+```js
+import React from 'react';
+import Hello from './Hello';
+
+function App() {
+  return <Hello name="react" color="red" />;
+}
+
+export default App;
+```
+
+### Hello.js
+
+``` js
+import React from 'react';
+
+function Hello(props) {
+  return <div style={{ color: props.color }}>안녕하세요 {props.name}</div>
+}
+
+export default Hello;
+```
+
+- 구조분해를 통해 더 깔끔하게 작성하기
+
+```js
+import React from 'react';
+
+function Hello({ color, name }) {
+  return <div style={{ color }}>안녕하세요 {name}</div>;
+}
+
+export default Hello;
+```
+
+- defaultProps 로 기본값 설정
+
+컴포넌트에 props 를 지정하지 않았을 때 기본적으로 사용 할 값을 설정하고 싶다면컴
+포넌트에 defaultProps 라는 값을 설정하면 됩니다.
+
+```js
+import React from 'react';
+
+function Hello({ color, name }) {
+  return <div style={{ color }}>안녕하세요 {name}</div>;
+}
+
+Hello.defaultProps = {
+  name: '이름없음'
+};
+
+export default Hello;
+```
+
+- props.children
+
+컴포넌트 태그 사이에 넣은 값을 조회하고 싶을 땐, props.children 을 조회하면 됩니
+다.
+
+### Wrapper.js
+
+```js
+import React from 'react';
+
+function Wrapper({ children }) {
+  const style = {
+    border: '2px solid black',
+    padding: '16px'
+  };
+  return <div style={style}>{children}</div>;
+}
+
+export default Wrapper;
+```
+
+### App.js
+
+```js
+import React from 'react';
+import Hello from './Hello';
+import Wrapper from './Wrapper';
+
+function App() {
+  return (
+    <Wrapper>
+      <Hello name="react" color="red" />
+      <Hello color="pink" />
+    </Wrapper>
+  );
+}
+
+export default App;
+```
+
+## 06. 조건부 렌더링
+
+조건부 렌더링이란, 특정 조건에 따라 다른 결과물을 렌더링 하는 것을 의미합니다.
+
+- props 값 설정을 생략하면 ={true}
+
+컴포넌트의 props 값을 설정하게 될 때 만약 props 이름만 작성하고 값 설정을 생략한
+다면, 이를 true 로 설정한 것으로 간주합니다. true 는 자바스크립트 값이기 때문에
+중괄호로 감싸주어야 합니다.
