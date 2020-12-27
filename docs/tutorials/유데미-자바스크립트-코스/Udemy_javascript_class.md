@@ -1109,7 +1109,7 @@ rest.delete(2); // Key를 기반으로 지운다. // Not encouraged
 const arr = [1, 2];
 rest.set(arr, 'Test');
 // rest.set([1, 2], 'test'); // ❶
-// console.log([1, 2]); // ❶에 있는 [1, 2]의 메모리 주소가 다르기 때문에 다른 값이다.
+// console.log(rest.get([1, 2]); // ❶에 있는 [1, 2]의 메모리 주소가 다르기 때문에 다른 값이다.
 
 // html element도 선택가능!
 rest.set(document.querySelector('h1'), 'Heading');
@@ -1459,3 +1459,4 @@ createBooking('LH123', undefined, 1000);
 
 ///////////////////////////////////////
 ```
+
