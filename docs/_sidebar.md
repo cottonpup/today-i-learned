@@ -24,20 +24,21 @@
 
 - 💠 React
 
-  - [**[Tutorial]** 벨로퍼트와 함께하는 모던 리액트](/React/vlpt-react.md)
+  - 🧚‍♀️ 2020 Studies
 
-  - [**[스터디 활동]** 리액트 기초 스터디](/React/react_doc.md)
+    - [**[스터디 활동]** 리액트 기초 스터디](/React/react_basic_study.md)
 
-  - [**[스터디 활동]** 아묻따! 일단 리액트 시작하기!](/React/Getting-start-react.md)
+    - [**[스터디 활동]** 아묻따! 일단 리액트 시작하기!](/React/Getting-start-react.md)
 
-  - **[FreeCodeCamp]** 리액트
+    - **[FreeCodeCamp]** 리액트
 
-    - [**[FreeCodeCamp]** React](/React/freedCodeCamp_React.md)
+      - [**[FreeCodeCamp]** React](/React/freedCodeCamp_React.md)
 
 - 🚂 HTML
-
-  - [**[👻 Info]** Script 태그의 위치](/html/script태그의_위치.md)
-  - [**[👻 Info]** textContent vs innerText vs innerHTML](/html/../../html/textcontent_innertext_innerhtml.md)
+  
+  - 🧚‍♀️ 2020 Studies
+    - [**[👻 Info]** Script 태그의 위치](/html/script태그의_위치.md)
+    - [**[👻 Info]** textContent vs innerText vs innerHTML](/html/../../html/textcontent_innertext_innerhtml.md)
 
 - 💅 CSS
 
