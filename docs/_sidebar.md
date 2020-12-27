@@ -37,7 +37,9 @@
 - 🚂 HTML
   
   - 🧚‍♀️ 2020 Studies
+  
     - [**[👻 Info]** Script 태그의 위치](/html/script태그의_위치.md)
+  
     - [**[👻 Info]** textContent vs innerText vs innerHTML](/html/../../html/textcontent_innertext_innerhtml.md)
 
 - 💅 CSS
