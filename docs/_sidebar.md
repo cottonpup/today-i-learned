@@ -6,8 +6,6 @@
 
   - 🧚‍♀️ 2020 Studies
 
-    - [**[Nomad Coder]** Youtube Clone](/tutorials/youtubeClone.md)
-
     - [**[Udemy]** Udemy Javascript Course](/tutorials/유데미-자바스크립트-코스/Udemy_javascript_class.md)
 
     - [**[스터디 활동]** 데이터 타입](/tutorials/자바스크립트_기초_스터디/01.데이터_타입.md)
@@ -49,6 +47,10 @@
 - 🎞 Git
 
 - 🏗 Build tools
+  
+- 🥗 Tutorials
+  
+  - [**[Nomad Coder]** Youtube Clone](/tutorials/youtubeClone.md)
 
 - 🔤 English Study
 
