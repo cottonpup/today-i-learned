@@ -292,8 +292,6 @@ DOM을 만드는 것을 뜻합니다.
 > <다음주 과제> [벨로퍼트 git book](https://react.vlpt.us/)을 참고하여 15Ch까지
 > 프로젝트 구현해보기
 
-
-
 # 벨로퍼트 git book - 제 1장
 
 ## 01. 리액트는 어쩌다 만들어졌을까?
@@ -310,4 +308,130 @@ _Virtual DOM_ 은 그냥 메모리에 가상으로 존재하는 DOM 으로서 �
 이기 때문에 작동 성능이 실제로 브라우저에서 DOM 을 보여주는 것 보다 속도가 훨씬
 빠릅니다.
 
-## 03.
+## 03. 나의 첫번째 리액트 컴포넌트
+
+컴포넌트는 일종의 UI 조각으로서 쉽게 재사용 할 수도 있습니다.
+
+ReactDOM. render()?: 넘겨주는 컨테이너 노드의 콘텐츠의 조작을 가능케 해줍니다.
+
+## 4. JSX의 기본 규칙 알아보기
+
+JSX? JSX 는 리액트에서 생김새를 정의할 때, 사용하는 문법입니다. 얼핏보면 HTML 같
+이 생겼지만 실제로는 JavaScript 입니다.
+
+리액트 컴포넌트 파일에서 XML 형태로 코드를 작성하면 babel 이 JSX 를 JavaScript
+로 변환을 해줍니다.
+
+- input 또는 br 태그와 같이 self closing tag도 리액트에서는 꼭 닫힌 태그로 작성
+  해야 합니다.
+
+```js
+import React from 'react';
+import Hello from './Hello';
+
+function App() {
+  return (
+    <div>
+      <Hello />
+      <Hello />
+      <Hello />
+      <input />
+      <br />
+    </div>
+  );
+}
+
+export default App;
+```
+
+- 두 개 이상의 태그는 무조건 하나의 태그로 감싸져있어야 합니다. 이런 불필요한 태
+  그사용을 막기 위해선, 리액트의 Fragment 라는 것을 사용하면 됩니다.
+
+```js
+import React from 'react';
+import Hello from './Hello';
+
+function App() {
+  return (
+    <div>
+      <Hello />
+      <div>안녕히계세요</div>
+    </div>
+  );
+}
+
+export default App;
+```
+
+리액트의 Fragment
+
+```js
+import React from 'react';
+import Hello from './Hello';
+
+function App() {
+  return (
+    <>
+      <Hello />
+      <div>안녕히계세요</div>
+    </>
+  );
+}
+
+export default App;
+```
+
+태그를 작성 할 때 이름 없이 작성을 하게 되면 Fragment 가 만들어지는데, Fragment
+는 브라우저 상에서 따로 별도의 엘리먼트로 나타나지 않습니다.
+
+- React에서의 style 과 className
+
+우선, 인라인 스타일은 객체 형태로 작성을 해야 하며, background-color 처럼 - 로구
+분되어 있는 이름들은 backgroundColor 처럼 camelCase 형태로 네이밍 해주어야 합니
+다.
+
+그리고, CSS class 를 설정 할 때에는 class= 가 아닌 className= 으로 설정을 해주어
+야 합니다.
+
+```js
+import React from 'react';
+import Hello from './Hello';
+
+function App() {
+  const name = 'react';
+  const style = {
+    backgroundColor: 'black',
+    color: 'aqua',
+    fontSize: 24, // 기본 단위 px
+    padding: '1rem' // 다른 단위 사용 시 문자열로 설정
+  };
+
+  return (
+    <>
+      <Hello />
+      <div style={style}>{name}</div>
+    </>
+  );
+}
+
+export default App;
+```
+
+- React JSX에서의 주석
+
+```js
+{
+  /* 주석은 화면에 보이지 않습니다 */
+}
+/* 중괄호로 감싸지 않으면 화면에 보입니다 */
+// 중괄호로 감싸지 않으면 화면에 보입니다
+
+하지만!!!
+<Hello
+// 열리는 태그 내부에서는 이렇게 주석을 작성 할 수 있습니다.
+/>;
+```
+
+## 5. props 를 통해 컴포넌트에게 값 전달하기
+
+## 6. 조건부 렌더링
