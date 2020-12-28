@@ -526,3 +526,24 @@ areas far from the center of a town, village etc
 a part of a town where people live
 
 </details>
+<details>
+<summary>2020.Dec.28</summary>
+
+## surrounding area
+area around a place
+## deprived area
+area where many poor people live
+## metropolitan area
+a very large city
+## heated argument
+argument involving strong feelings
+## special arrangement
+sparticular preparations other than those usually made
+
+> **지금까지의 회고**
+>
+> 사실 시간을 들여서 영어 공부하는 게 귀찮기도 해서 멤라이즈로 단어를 외우는 것이었는데, 너무 쉬운 수준의 단어이기도 하고 
+> 효과가 느껴지는 게 없는 것 같다. 사실 상으로, 제일 늘리고 싶은 것은 `고급 어휘`와 `리딩 실력`, `더 풍부한 회화 실력`이다.
+>
+> 그래서 다시 BBC를 공부하는 게 더 나을 것 같다! 히히..
+</details>
