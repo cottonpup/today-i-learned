@@ -6,6 +6,7 @@
 > 합니다.
 
 > [리액트 기초 스터디 궁금한 점들]
+> 1. 챕터9, 10이 이해가 가지 않는다. 
 
 # 1. Hello World
 
@@ -390,8 +391,8 @@ export default App;
 
 - React에서의 style 과 className
 
-우선, 인라인 스타일은 객체 형태로 작성을 해야 하며, background-color 처럼 - 로구
-분되어 있는 이름들은 backgroundColor 처럼 camelCase 형태로 네이밍 해주어야 합니
+우선, `인라인 스타일은 객체 형태로 작성`을 해야 하며, background-color 처럼 - 로구
+분되어 있는 이름들은 backgroundColor 처럼 `camelCase 형태로 네이밍` 해주어야 합니
 다.
 
 그리고, CSS class 를 설정 할 때에는 class= 가 아닌 className= 으로 설정을 해주어
@@ -507,7 +508,7 @@ function Hello({ color, name }) {
 export default Hello;
 ```
 
-- defaultProps 로 기본값 설정
+- `defaultProps` 로 기본값 설정
 
 컴포넌트에 props 를 지정하지 않았을 때 기본적으로 사용 할 값을 설정하고 싶다면컴
 포넌트에 defaultProps 라는 값을 설정하면 됩니다.
@@ -526,7 +527,7 @@ Hello.defaultProps = {
 export default Hello;
 ```
 
-- props.children
+- `props.children`
 
 컴포넌트 태그 사이에 넣은 값을 조회하고 싶을 땐, props.children 을 조회하면 됩니
 다.
@@ -582,7 +583,7 @@ export default App;
   
 컴포넌트에서 동적인 값을 상태(state)라고 부릅니다. 리액트에 useState 라는 함수가 있는데요, 이것을 사용하면 컴포넌트에서 상태를 관리 할 수 있습니다.
 
-- useState hook? 🧐
+- `useState hook?` 🧐
 
 function에서만 사용이 가능하고, 클래스에서는 사용이 불가능하다. 클래스에선 훅 없이 똑같은 기능을 구현할 수 있기 때문!
 
@@ -590,12 +591,14 @@ function에서만 사용이 가능하고, 클래스에서는 사용이 불가능
 
 리액트 훅은 함수의 상단에 위치시켜주는 것이 옳다.
 
-What does useState return? It returns a pair of values: the current state and a function that updates it. This is why we write const [count, setCount] = useState().
+`What does useState return?` It returns a pair of values: `the current state and a function that updates it`. This is why we write const [count, setCount] = useState().
 
 ## 08. input 상태 관리하기
 
+input 값에 있어서, `onChange` 라는 이벤트를 사용하여 이벤트 객체 e 의 value값을 받아 올 수 있다. 이 값을 `useState` 를 통해서 관리를 하면 된다.
 
+## 09. 여러개의 input 상태 관리하기 `Check!! 이해가 잘..`
 
-## 09
+## 10. useRef 로 특정 DOM 선택하기
 
-## 10
+`ref`: 특정 DOM을 선택하기 위한 Hook! 함수형 컴포넌트에서 ref 를 사용 할 때에는 `useRef` 라는 Hook 함수를 사용합니다. 
