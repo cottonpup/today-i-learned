@@ -5,6 +5,8 @@
 > 스터디 활동을 통해 리액트 공식 문서를 공부합니다. 공부하면서 배운 점들을 기록
 > 합니다.
 
+> [리액트 기초 스터디 궁금한 점들]
+
 # 1. Hello World
 
 ```html
@@ -573,3 +575,27 @@ export default App;
 컴포넌트의 props 값을 설정하게 될 때 만약 props 이름만 작성하고 값 설정을 생략한
 다면, 이를 true 로 설정한 것으로 간주합니다. true 는 자바스크립트 값이기 때문에
 중괄호로 감싸주어야 합니다.
+
+## 07. useState 를 통해 컴포넌트에서 바뀌는 값 관리하기
+
+- 동적인 값 끼얹기, useState
+  
+컴포넌트에서 동적인 값을 상태(state)라고 부릅니다. 리액트에 useState 라는 함수가 있는데요, 이것을 사용하면 컴포넌트에서 상태를 관리 할 수 있습니다.
+
+- useState hook? 🧐
+
+function에서만 사용이 가능하고, 클래스에서는 사용이 불가능하다. 클래스에선 훅 없이 똑같은 기능을 구현할 수 있기 때문!
+
+리액트 훅은 컨디셔널한 문장에 넣을 수 없다. (if statement, loop..) 따라서, 반드시 모든 컴포넌트 랜더와 같은 순서로 호출되어야 한다. 
+
+리액트 훅은 함수의 상단에 위치시켜주는 것이 옳다.
+
+What does useState return? It returns a pair of values: the current state and a function that updates it. This is why we write const [count, setCount] = useState().
+
+## 08. input 상태 관리하기
+
+
+
+## 09
+
+## 10
