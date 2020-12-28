@@ -48,6 +48,8 @@
 
 - 🏗 Build tools
   
+- 📚 Algorithm & Data structures
+  
 - 🥗 Tutorials
   
   - [**[Nomad Coder]** Youtube Clone](/tutorials/youtubeClone.md)
