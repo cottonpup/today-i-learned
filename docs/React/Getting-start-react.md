@@ -13,6 +13,13 @@
 > 1. this 바인딩
 > 2. super 키워드
 > 3. ES6 module
+> 4. 구조 분해 할당
+> 5. class
+> 6. default parameter (defaultProps없이 사용가능)
+
+> 느낀 점들
+> 1. 제대로 된 개념없이 따라하니, 따라가기가 꽤나 어렵다. 이해없이 따라가는 기분? 
+> 2. 하지만, 바로 프로젝트를 빌드업하는 것부터 시작하니 좀 더 빠르게 리액트의 역할을 이해할 수 있었다. (컴포넌트의 관리 등)
 
 [참고 문서](https://ko.reactjs.org/tutorial/tutorial.html)
 
