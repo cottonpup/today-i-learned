@@ -70,3 +70,16 @@ class MyComponent extends React.Component {
   }
 };
 ```
+
+# setState()
+
+setState: state를 업데이트하는 메서드
+
+컴포넌트 안에서 `this.setState()` 식으로 `key, value를 가진 객체`를 전달하여 사용할 수 있다. 
+
+key는 state 프로퍼티를, value는 업데이트 할 state 데이터를 적는다. 
+
+리액트에서는 절대 state를 직접적으로 변경할 수 없고 `this.setState()`메서드를 활용해야 한다. 
+
+따라서 이는 비동기적일 수 있다. 이 문제를 우회할 수 있는 문법이 존재하나, 필요할 일은 매우 적다. 
+
