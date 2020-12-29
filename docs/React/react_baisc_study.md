@@ -5,9 +5,6 @@
 > 스터디 활동을 통해 리액트 공식 문서를 공부합니다. 공부하면서 배운 점들을 기록
 > 합니다.
 
-> [리액트 기초 스터디 궁금한 점들]
-> 1. 챕터9, 10이 이해가 가지 않는다. 
-
 # 1. Hello World
 
 ```html
@@ -602,3 +599,21 @@ input 값에 있어서, `onChange` 라는 이벤트를 사용하여 이벤트 �
 ## 10. useRef 로 특정 DOM 선택하기
 
 `ref`: 특정 DOM을 선택하기 위한 Hook! 함수형 컴포넌트에서 ref 를 사용 할 때에는 `useRef` 라는 Hook 함수를 사용합니다. 
+
+---- 
+
+[참고자료]
+
+[큐킴님이 주신 링크| useState와 useRef의 차이점](https://medium.com/humanscape-tech/react-usestate-vs-useref-4c20713f7ef)
+
+useState와 useRef의 공통점: 함수형 컴포넌트에서 동적으로 상태관리를 가능케 함.
+
+useRef는 변환 가능한 ref 객체를 반환한다. 이 객체의 current 속성은 전달인수를 초기화시킨다.
+
+useState와 useRef의 차이점: useState와 다르게 useRef는 state를 변화시킨 후에 component를 re-render하지 않는다.
+
+Rendering이 필요한 state의 경우 useState를 이용하는 것이 간편하게 상태관리를 할 수 있으며, rendering이 필요하지 않은 state의 경우 useRef를 쓰는 것이 간단하게 코드를 작성하실 수 있습니다. 
+
+-----
+
+## 11. 
