@@ -1,3 +1,4 @@
+
 <details>
 <summary>2020.Dec.15</summary>
 
@@ -546,4 +547,22 @@ sparticular preparations other than those usually made
 > 효과가 느껴지는 게 없는 것 같다. 사실 상으로, 제일 늘리고 싶은 것은 `고급 어휘`와 `리딩 실력`, `더 풍부한 회화 실력`이다.
 >
 > 그래서 다시 BBC를 공부하는 게 더 나을 것 같다! 히히..
+</details>
+<details>
+<summary>2020.Dec.29</summary>
+
+## key worker
+
+## contact tracing
+
+## Key worker
+
+## plastic footprint
+
+</details>
+<details>
+<summary>2020.Dec.31</summary>
+
+## 
+
 </details>
