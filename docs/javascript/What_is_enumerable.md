@@ -1,0 +1,1 @@
+https://medium.com/@shivamethical/what-is-enumerable-in-javascript-e2b1c0fd0623
