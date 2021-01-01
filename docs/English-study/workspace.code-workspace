@@ -1,0 +1,17 @@
+{
+  "folders": [
+	{
+		"path": "../.."
+	},
+	{
+		"path": "../../../javascript-mini-project"
+	},
+	{
+		"path": "../../../../begin-react"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "javascript-mini-project",
+    "editor.fontFamily": "JetBrains Mono"
+  }
+}
