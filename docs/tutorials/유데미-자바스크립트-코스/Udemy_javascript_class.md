@@ -2,6 +2,8 @@
 
 [2020.Dec.16]
 
+# Section 08
+
 ## 91. Execution Contexts and The Call Stack
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
@@ -284,7 +286,7 @@ console.log('After marriage: ', jessicaCopy);
 
 외부 라이브러리인 Lo-Dash를 통해서도 깊은 복사가 가능하다!
 
-[2020.Dec.18]
+# Section 09
 
 ## 103. Destructing Arrays
 
@@ -1425,6 +1427,7 @@ document.querySelector('button').addEventListener('click', function () {
 */
 
 ```
+# Section 10
 
 ## 126. Default Parameters
 
