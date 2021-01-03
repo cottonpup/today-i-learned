@@ -1,6 +1,6 @@
-# Youtube Clone With Nomad Coder
+> 노마드 코더 튜토리얼을 보면서 유튜브를 클론합니다. 이론 정리를 위해 간략화했을 뿐, 다듬어진 포스트가 아닙니다. 
 
-노마드 코더 튜토리얼을 보면서 유튜브를 클론합니다.
+# Youtube Clone With Nomad Coder
 
 # 1 NODEJS THEORY
 
