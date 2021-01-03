@@ -1,3 +1,5 @@
+> freeCodeCamp에서 React를 공부합니다. 이론 정리를 위해 간략화했을 뿐, 다듬어진 포스트가 아닙니다. 
+
 # freeCodeCamp - React
 
 # JSX안에서 자바스크립트 코드를 적을 때는 컬리 브라켓으로 감싸준다.
@@ -82,4 +84,8 @@ key는 state 프로퍼티를, value는 업데이트 할 state 데이터를 적�
 리액트에서는 절대 state를 직접적으로 변경할 수 없고 `this.setState()`메서드를 활용해야 한다. 
 
 따라서 이는 비동기적일 수 있다. 이 문제를 우회할 수 있는 문법이 존재하나, 필요할 일은 매우 적다. 
+
+# React: Bind 'this' to a Class Method
+
+
 
