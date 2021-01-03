@@ -10,15 +10,16 @@
 
     - [**[스터디 활동]** 데이터 타입](/tutorials/자바스크립트_기초_스터디/01.데이터_타입.md)
 
-    - [**[스터디 활동]** 프로토타입](/javascript/prototype.md)
+    - [**[스터디 활동]** 프로토타입](/javascript/2020/prototype.md)
 
     - [**[스터디 활동]** 클래스](/tutorials/자바스크립트_기초_스터디/07.클래스.md)
 
-    - [**[📝 이론정리]** 클래스](/javascript/class.md)
+    - [**[📝 이론정리]** 클래스](/javascript/2020/class.md)
 
     - **[FreeCodeCamp]** 자바스크립트
 
-      - [**[FreeCodeCamp]** ES6](/javascript/freedCodeCamp_ES6.md)
+      - [**[FreeCodeCamp]** ES6](/javascript/2020/freedCodeCamp_ES6.md)
+      - [**[FreeCodeCamp]** Debugging](/javascript/2020/freedCodeCamp_Debugging.md)
 
 - 💠 React
 

@@ -1439,7 +1439,7 @@ const createBooking = function (
   numPassengers = 1,
   price = 199 * numPassengers
 ) {
-  // ES5
+  // ES5 Ugly boilerplate code
   // numPassengers = numPassengers || 1;
   // price = price || 199;
   const booking = {
@@ -1460,3 +1460,100 @@ createBooking('LH123', undefined, 1000);
 ///////////////////////////////////////
 ```
 
+# 127. How Passing Arguments Works: Values vs. Reference
+
+```js
+///////////////////////////////////////
+// How Passing Arguments Works: Values vs. Reference
+const flight = 'LH234';
+const jonas = {
+  name: 'Jonas Schmedtmann',
+  passport: 24739479284,
+};
+const checkIn = function (flightNum, passenger) {
+  flightNum = 'LH999';
+  passenger.name = 'Mr. ' + passenger.name;
+  if (passenger.passport === 24739479284) {
+    alert('Checked in');
+  } else {
+    alert('Wrong passport!');
+  }
+};
+// checkIn(flight, jonas);
+// console.log(flight);
+// console.log(jonas);
+// Is the same as doing...
+// const flightNum = flight;
+// const passenger = jonas;
+const newPassport = function (person) {
+  person.passport = Math.trunc(Math.random() * 100000000000);
+};
+newPassport(jonas);
+checkIn(flight, jonas);
+```
+
+자바스크립트 참조방식, 복사방식 
+
+**자바스크립트에서 참조를 전달할 수 없다. 참조하고 있는 메모리 주소 값을 전달하는 것!**
+
+# 128. First-Class and Higher-Order Functions
+
+[자바스크립트는 일급 객체이다.](https://soeunlee.medium.com/javascript%EC%97%90%EC%84%9C-%EC%99%9C-%ED%95%A8%EC%88%98%EA%B0%80-1%EA%B8%89-%EA%B0%9D%EC%B2%B4%EC%9D%BC%EA%B9%8C%EC%9A%94-cc6bd2a9ecac)
+https://bestalign.github.io/2015/10/18/first-class-object/
+
+```js
+///////////////////////////////////////
+// Functions Accepting Callback Functions
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+// Higher-order function
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+  console.log(`Transformed by: ${fn.name}`);
+};
+transformer('JavaScript is the best!', upperFirstWord);
+transformer('JavaScript is the best!', oneWord);
+// JS uses callbacks all the time
+const high5 = function () {
+  console.log('👋');
+};
+document.body.addEventListener('click', high5);
+['Jonas', 'Martha', 'Adam'].forEach(high5);
+```
+
+<img width="707" alt="Screen Shot 2021-01-03 at 4 36 12 PM" src="https://user-images.githubusercontent.com/67526014/103473961-e9c64e80-4de1-11eb-9120-5c57cecb981e.png">
+
+# 129. Functions Accepting Callback Functions
+
+```js 
+///////////////////////////////////////
+// Functions Accepting Callback Functions 
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+// Higher-order function
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+  console.log(`Transformed by: ${fn.name}`);
+};
+transformer('JavaScript is the best!', upperFirstWord);
+transformer('JavaScript is the best!', oneWord);
+// JS uses callbacks all the time
+const high5 = function () {
+  console.log('👋');
+};
+document.body.addEventListener('click', high5);
+['Jonas', 'Martha', 'Adam'].forEach(high5);
+음
+```

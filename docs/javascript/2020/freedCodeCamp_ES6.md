@@ -131,4 +131,25 @@ Promise는 말 그대로 무엇을 하겠다고 약속하는(주로 비동기적
 
 테스크가 완료되었을 때, 프라미스를 이행할 지 말 지를 결정한다. 
 
-# 
+### - 헷갈리는 개념 
+
+`Parameter: 매개변수, argument: 전달인자(함수가 호출 될 때 전달되는 변수)`
+
+Promise는 세가지 state를 가진다. (pending, fulfilled, rejected) 
+
+Promise를 완료하지 않으면 pending 상태이다.
+
+resolve와 reject 매개변수는 전달인자에따라 사용된다. 
+
+Promise는 success와 failure를 다룬다. 
+
+Promise는 비동기 처리에 유용하다.
+
+# then
+
+then 메서드는 Promise가 reslove되면 바로 실행된다.
+
+# catch 
+
+catch 메서드는 Promise가 reject되면 바로 실행된다. 
+
