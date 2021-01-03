@@ -2,7 +2,7 @@
 
 [2020.Dec.16]
 
-# 91. Execution Contexts and The Call Stack
+## 91. Execution Contexts and The Call Stack
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
 
@@ -15,7 +15,7 @@ https://velog.io/@thms200/Event-Loop-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94
 [how-does-javascript-actually-work-part-1](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)
 [Check]
 
-# 92 Scope and the scope chain
+## 92 Scope and the scope chain
 
 스코프는 "변수는 어딨지?", "특정 변수를 어디에서 접근해야하지?"와 같은 질문이다.
 
@@ -38,13 +38,13 @@ Functions are also block scoped. (only in strict mode).
 스코프는 부모 스코프에 있는 변수에 접근할 수 있다. current scope에 찾는 변수가없
 다면, 부모 스코프로가서 변수를 찾는다. 하지만, 그 반대로는 일어나진 않는다.
 
-## scope chain vs call stack
+### scope chain vs call stack
 
 call stack은 함수가 호출된 순서이다.
 
 scope chain은 함수의 호출 순서와는 관련이 없다.
 
-# 93. Scoping in Practice
+## 93. Scoping in Practice
 
 ```js
 function printAge() {
@@ -65,14 +65,14 @@ printAge();
 
 다른 스코프에 있는 경우, 변수의 이름을 번복해도 상관이 없다!
 
-# 94. Variable Environment: Hoisting and The TDZ
+## 94. Variable Environment: Hoisting and The TDZ
 
 Hoisting: Makes some types of variables accessible/ usable in the code before
 they are actually declared.
 
 <img width="1225" alt="Screen Shot 2020-12-17 at 12 09 37 AM" src="https://user-images.githubusercontent.com/67526014/102376213-bd9b8700-4006-11eb-9ba8-1232b735ad03.png">
 
-## Temporal Dead Zone, Let and const
+### Temporal Dead Zone, Let and const
 
 TDZ: the region of the scope in which the variable is defined, but can't be used
 in any way.
@@ -80,7 +80,7 @@ in any way.
 Why TDZ? Makes it easier to avoid and catch errors: accessing variables before
 declaration is bad practice and should be avoided.
 
-# 95. Hoisting and TDZ in Practice
+## 95. Hoisting and TDZ in Practice
 
 ```js
 console.log(me); // hoisting이 일어나지만, undefined
@@ -135,14 +135,14 @@ console.log(y === window.y); // false
 console.log(z === window.z); // false
 ```
 
-# 96. The this Keyword
+## 96. The this Keyword
 
 this keyword/variables: Special variables that is created for every
 context(every function). this keyword is not **static.**
 
 <img width="1200" alt="Screen Shot 2020-12-17 at 1 09 14 AM" src="https://user-images.githubusercontent.com/67526014/102376293-d5730b00-4006-11eb-8e3f-93a7eab292df.png">
 
-# 97. The this Keyword in Practice
+## 97. The this Keyword in Practice
 
 브라우저 콘솔에 `console.log(this);`을 입력하면 `Window 객체`가 출력된다.
 
@@ -167,7 +167,7 @@ const jonas = {
 jonas.calcAge(); // 부모객체인 즉, owner인 jonas 객체가 나옴.
 ```
 
-# 98. Regular Functions vs. Arrow Functions
+## 98. Regular Functions vs. Arrow Functions
 
 - **메서드로 화살표 함수는 사용하지 않기**
 
@@ -209,7 +209,7 @@ jonas.greet();
 // jonas.calcAge();
 ```
 
-## Arguments 키워드
+### Arguments 키워드
 
 추가 arg를 추가하여 사용하는 것이 가능하다. 하지만, Arguments 키워드는 regular
 function안에서만 존재하고, arrow function에선 존재하지 않는다.
@@ -233,7 +233,7 @@ var addArrow = (a, b) => {
 addArrow(2, 5, 8);
 ```
 
-# 99. Primitives vs. Objects (Primitive vs. Reference Types)
+## 99. Primitives vs. Objects (Primitive vs. Reference Types)
 
 ```js
 // Objects vs. primitives
@@ -257,14 +257,15 @@ Objects: object literal, arrays, functions..many more. (Reference type) => Get s
 It's not true to say const are immutable. In fact, that is only true for
 primitive values, but not for reference values.
 
-# 100. Primitives vs. Objects in Practice
+## 100. Primitives vs. Objects in Practice
 
-```js
-## Object.assign
+### Object.assign
 
 이 기술은 오리지널을 그대로 카피할 수 있게 해준다. 그러나, 오직 first level 에서만 가능하다는 문제가 존재한다. 즉, 오직 shallow copy만 가능하다.
 
-## Manipulation the copied object with Push method
+### Manipulation the copied object with Push method
+
+```js
 
 // Copying objects
 const jessica2 = {
@@ -285,7 +286,7 @@ console.log('After marriage: ', jessicaCopy);
 
 [2020.Dec.18]
 
-# 103. Destructing Arrays
+## 103. Destructing Arrays
 
 ```js
 ///////////////////////////////////////
@@ -341,7 +342,7 @@ const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
 ```
 
-# 104 Destructuring Objects
+## 104 Destructuring Objects
 
 ```js
 const restaurant = {
@@ -419,7 +420,7 @@ const {
 console.log(o, c);
 ```
 
-# 105 The Spread Operator (...)
+## 105 The Spread Operator (...)
 
 ```js
 ///////////////////////////////////////
@@ -514,7 +515,7 @@ console.log(restaurantCopy.name);
 console.log(restaurant.name);
 ```
 
-# 106 Rest Pattern and Parameters
+## 106 Rest Pattern and Parameters
 
 ```js
 ///////////////////////////////////////
@@ -603,7 +604,7 @@ restaurant.orderPizza('mushrooms');
 ///////////////////////////////////////
 ```
 
-# 107. Short Circuiting (&& and ||)
+## 107. Short Circuiting (&& and ||)
 
 ```js
 ///////////////////////////////////////
@@ -648,7 +649,7 @@ restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
 [2020.Dec.19]
 
-# 108. The Nullish Coalescing Operator (??)
+## 108. The Nullish Coalescing Operator (??)
 
 ```js
 ///////////////////////////////////////
@@ -664,7 +665,7 @@ console.log(guestCorrect);
 
 [2020.Dec.20]
 
-# 109. Coding Challenge #1
+## 109. Coding Challenge #1
 
 ```js
 /* 
@@ -779,7 +780,7 @@ team1 < team2 && console.log('Team 1 is more likely to win');
 team1 > team2 && console.log('Team 2 is more likely to win');
 ```
 
-# 110. Looping Arrays: The for-of Loop
+## 110. Looping Arrays: The for-of Loop
 
 ```js
 const restaurant = {
@@ -830,7 +831,7 @@ for (const [i, el] of menu.entries()) {
 }
 ```
 
-# 111. Enhanced Object Literals
+## 111. Enhanced Object Literals
 
 ```js
 // ES6 computing property name
@@ -887,7 +888,7 @@ const restaurant = {
 };
 ```
 
-# 112. Optional Chaining (.?)
+## 112. Optional Chaining (.?)
 
 ```js
 ///////////////////////////////////////
@@ -929,7 +930,7 @@ else console.log('user array empty');
 ///////////////////////////////////////
 ```
 
-# 113. Looping Objects: Object Keys, Values, and Entries
+## 113. Looping Objects: Object Keys, Values, and Entries
 
 ```js
 ///////////////////////////////////////
@@ -974,7 +975,7 @@ for (const [day, { open, close }] of entries) {
 }
 ```
 
-# 114. Coding Challenge #2
+## 114. Coding Challenge #2
 
 ```js
 // Coding Challenge #2
@@ -1032,7 +1033,7 @@ for (const player of game.scored) {
 
 [객체 기본](https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Basics)
 
-# 115. Sets
+## 115. Sets
 
 ```js
 // Sets
@@ -1075,7 +1076,7 @@ console.log(new Set('jonasschmedtmann').size);
 */
 ```
 
-# 116. Maps: Fundamentals
+## 116. Maps: Fundamentals
 
 ```js
 ///////////////////////////////////////
@@ -1118,7 +1119,7 @@ console.log(rest.size);
 console.log(rest.get(arr));
 ```
 
-# 117 Maps: Iteration
+## 117 Maps: Iteration
 
 ```js
 ///////////////////////////////////////
@@ -1153,11 +1154,11 @@ console.log([...question.keys()]);
 console.log([...question.values()]);
 ```
 
-# 118. Summary: Which Data Structure to Use?
+## 118. Summary: Which Data Structure to Use?
 
 <img width="1280" alt="Screen Shot 2020-12-26 at 2 53 59 PM" src="https://user-images.githubusercontent.com/67526014/103150736-1cf15800-47ba-11eb-8b67-4abec437f3d0.png">
 
-# 119. Coding Challenge #3
+## 119. Coding Challenge #3
 
 ```js
 ///////////////////////////////////////
@@ -1188,7 +1189,7 @@ const gameEvents = new Map([
 ]);
 ```
 
-# 120. Working With Strings - Part 1
+## 120. Working With Strings - Part 1
 
 ```js
 ///////////////////////////////////////
@@ -1248,7 +1249,7 @@ console.log(typeof new String('jonas')); // object
 
 ```
 
-# 120 Working With Strings
+## 120 Working With Strings
 
 ```js
 ///////////////////////////////////////
@@ -1312,7 +1313,7 @@ checkBaggage('Socks and camera');
 checkBaggage('Got some snacks and a gun for protection');
 ```
 
-# 121 Working With Strings - Part 3
+## 121 Working With Strings - Part 3
 
 ```js
 ///////////////////////////////////////
@@ -1376,7 +1377,7 @@ planesInLine(12);
 
 ```
 
-# 122 Coding Challenge #4
+## 122 Coding Challenge #4
 
 ```js
 // Coding Challenge #4
@@ -1425,7 +1426,7 @@ document.querySelector('button').addEventListener('click', function () {
 
 ```
 
-# 126. Default Parameters
+## 126. Default Parameters
 
 ```js
 'use strict';
@@ -1460,7 +1461,7 @@ createBooking('LH123', undefined, 1000);
 ///////////////////////////////////////
 ```
 
-# 127. How Passing Arguments Works: Values vs. Reference
+## 127. How Passing Arguments Works: Values vs. Reference
 
 ```js
 ///////////////////////////////////////
@@ -1496,7 +1497,7 @@ checkIn(flight, jonas);
 
 **자바스크립트에서 참조를 전달할 수 없다. 참조하고 있는 메모리 주소 값을 전달하는 것!**
 
-# 128. First-Class and Higher-Order Functions
+## 128. First-Class and Higher-Order Functions
 
 [자바스크립트는 일급 객체이다.](https://soeunlee.medium.com/javascript%EC%97%90%EC%84%9C-%EC%99%9C-%ED%95%A8%EC%88%98%EA%B0%80-1%EA%B8%89-%EA%B0%9D%EC%B2%B4%EC%9D%BC%EA%B9%8C%EC%9A%94-cc6bd2a9ecac)
 https://bestalign.github.io/2015/10/18/first-class-object/
@@ -1529,7 +1530,7 @@ document.body.addEventListener('click', high5);
 
 <img width="707" alt="Screen Shot 2021-01-03 at 4 36 12 PM" src="https://user-images.githubusercontent.com/67526014/103473961-e9c64e80-4de1-11eb-9120-5c57cecb981e.png">
 
-# 129. Functions Accepting Callback Functions
+## 129. Functions Accepting Callback Functions
 
 콜백 함수의 사용이유: 코드의 재사용과 추상화를 도움
 
@@ -1560,7 +1561,7 @@ document.body.addEventListener('click', high5);
 ['Jonas', 'Martha', 'Adam'].forEach(high5);
 ```
 
-# 130. Functions Returning Functions
+## 130. Functions Returning Functions
 
 ```js
 ///////////////////////////////////////
@@ -1582,7 +1583,7 @@ greetArr('Hi')('Jonas');
 
 ```
 
-# 131. The call and apply Methods
+## 131. The call and apply Methods
 
 ```js
 ///////////////////////////////////////
@@ -1636,7 +1637,7 @@ console.log(swiss);
 book.call(swiss, ...flightData);
 ```
 
-# 132. The bind Method
+## 132. The bind Method
 
 ```js
 ///////////////////////////////////////
@@ -1649,6 +1650,7 @@ bookEW(23, 'Steven Williams');
 const bookEW23 = book.bind(eurowings, 23);
 bookEW23('Jonas Schmedtmann');
 bookEW23('Martha Cooper');
+
 // With Event Listeners
 lufthansa.planes = 300;
 lufthansa.buyPlane = function () {
@@ -1660,6 +1662,7 @@ lufthansa.buyPlane = function () {
 document
   .querySelector('.buy')
   .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
 // Partial application
 const addTax = (rate, value) => value + value * rate;
 console.log(addTax(0.1, 200));
