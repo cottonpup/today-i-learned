@@ -1,3 +1,5 @@
+> freeCodeCamp에서 Deugging을 공부합니다. 이론 정리를 위해 간략화했을 뿐, 다듬어진 포스트가 아닙니다. 
+
 # 디버깅
 
 ## console.clear()

@@ -1,3 +1,5 @@
+> freeCodeCamp에서 ES6를 공부합니다. 이론 정리를 위해 간략화했을 뿐, 다듬어진 포스트가 아닙니다. 
+
 # Object.freeze()
 
 const는 immutable함을 나타내는 키워드가 아니다. 하지만 Object.freeze()을 사용하
