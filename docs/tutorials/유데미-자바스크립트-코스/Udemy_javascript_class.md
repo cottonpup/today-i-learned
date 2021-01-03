@@ -1531,6 +1531,8 @@ document.body.addEventListener('click', high5);
 
 # 129. Functions Accepting Callback Functions
 
+콜백 함수의 사용이유: 코드의 재사용과 추상화를 도움
+
 ```js 
 ///////////////////////////////////////
 // Functions Accepting Callback Functions 
@@ -1545,6 +1547,7 @@ const upperFirstWord = function (str) {
 const transformer = function (str, fn) {
   console.log(`Original string: ${str}`);
   console.log(`Transformed string: ${fn(str)}`);
+  // 함수 이름 출력하는 메섣, 
   console.log(`Transformed by: ${fn.name}`);
 };
 transformer('JavaScript is the best!', upperFirstWord);
@@ -1555,5 +1558,122 @@ const high5 = function () {
 };
 document.body.addEventListener('click', high5);
 ['Jonas', 'Martha', 'Adam'].forEach(high5);
-음
+```
+
+# 130. Functions Returning Functions
+
+```js
+///////////////////////////////////////
+// Functions Returning Functions
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+const greeterHey = greet('Hey');
+greeterHey('Jonas');
+greeterHey('Steven');
+greet('Hello')('Jonas');
+
+// Challenge
+// 화살표 함수로 콜백함수 호출하기 
+const greetArr = greeting => name => {console.log(`${greeting} ${name}`)};
+greetArr('Hi')('Jonas');
+
+```
+
+# 131. The call and apply Methods
+
+```js
+///////////////////////////////////////
+// The call and apply Methods
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  // book: function() {}
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Jonas Schmedtmann');
+lufthansa.book(635, 'John Smith');
+
+// this가 바인딩 된 객체와 Key명은 똑같이 해줘야 한다!
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+// 일반 함수 식에서 this키워드는 (strict mode에서) undefined이다. (window에선 전역)
+// Does NOT work
+// book(23, 'Sarah Williams');
+
+// Call method
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
+book.call(lufthansa, 239, 'Mary Cooper');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+book.call(swiss, 583, 'Mary Cooper');
+
+// Apply method
+// Call이 더 모던한 방법 
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss);
+book.call(swiss, ...flightData);
+```
+
+# 132. The bind Method
+
+```js
+///////////////////////////////////////
+// The bind Method
+// book.call(eurowings, 23, 'Sarah Williams');
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+bookEW(23, 'Steven Williams');
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Jonas Schmedtmann');
+bookEW23('Martha Cooper');
+// With Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+// lufthansa.buyPlane();
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+// Partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+const addVAT = addTax.bind(null, 0.23);
+// addVAT = value => value + value * 0.23;
+console.log(addVAT(100));
+console.log(addVAT(23));
+const addTaxRate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+const addVAT2 = addTaxRate(0.23);
+console.log(addVAT2(100));
+console.log(addVAT2(23));
+*/
 ```
