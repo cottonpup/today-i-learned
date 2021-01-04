@@ -3,6 +3,12 @@
 * 👩🏻‍💻 Study Log
 
 - 🍊 Javascript
+  - 🧚‍♀️ 2021 Studies
+    - [**[📝 이론정리]** Set과 Map](/javascript/2021/set_map_note.md)
+
+      - **[FreeCodeCamp]** 자바스크립트
+
+        - [**[FreeCodeCamp]** Basic Data Structure](/javascript/2021/freeCodeCamp_Basic_Data_Structure.md)
 
   - 🧚‍♀️ 2020 Studies
 
