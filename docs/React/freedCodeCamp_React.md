@@ -87,5 +87,9 @@ key는 state 프로퍼티를, value는 업데이트 할 state 데이터를 적�
 
 # React: Bind 'this' to a Class Method
 
+ you have to wrap the object literal in parentheses, otherwise JavaScript thinks it's a block of code.
+
+객체 리터럴은 ()괄호로 묶어주기! 
+
 
 
