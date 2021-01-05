@@ -1739,11 +1739,156 @@ console.dir(booker);
 
 [[]] => 코드내에서 접근할 수 없다는 의미!
 
-# Section 11
-
-## 140. 
+## 137. Coding Challenge #2
 
 ```js
-
+(function () {
+    const header = document.querySelector('h1');
+    header.style.color = 'red';
+    document.querySelector('body').addEventListener('click', function () {
+      header.style.color = 'blue';
+    });
+  })();
 ```
 
+# Section 11
+
+## 140. Simple Array Methods
+
+### slice()💇‍♀️
+```js
+// SLICE 
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+console.log(arr);
+console.log(arr.slice(2));
+console.log(arr.slice(2, 4));
+console.log(arr.slice(-2)); // take last two elements
+console.log(arr.slice(1, -2));
+console.log(arr.slice(1, 3));
+
+// [ 'a', 'b', 'c', 'd', 'e' ]
+// [ 'c', 'd', 'e' ]
+// [ 'c', 'd' ]
+// [ 'd', 'e' ]
+// [ 'b', 'c' ]
+// [ 'b', 'c' ]
+
+// 1️⃣. slice() 메서드 활용 🖨
+console.log(arr.slice());
+// [ 'a', 'b', 'c', 'd', 'e' ] // shallow copy 
+// 2️⃣. 스프레드 용법 활용 🖨
+console.log([...arr]);
+// [ 'a', 'b', 'c', 'd', 'e' ] 
+```
+### splice()💇‍♀️
+```js
+// SPLICE
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+console.log(arr.splice(2)); //[ 'c', 'd', 'e' ]
+console.log(arr); //[ 'a', 'b' ]
+console.log(arr.splice()); //[ ]
+console.log(arr.splice(1, 2)); //[ 'b' ]
+console.log(arr); //[ 'a' ]
+// Original array is gone 😥😰
+```
+
+### reverse()💇‍♀️
+```js
+// REVERSE
+let arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+
+console.log(arr2.reverse());
+console.log(arr2); // 원본 배열도 수정함! 😱😨
+```
+
+### concat()💇‍♀️
+```js
+// CONCAT
+let arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+arr2.reverse();
+const letters = arr.concat(arr2);
+console.log(letters);
+console.log(...arr, ...arr2);
+```
+
+### join()💇‍♀️
+```js
+let arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+arr2.reverse();
+const letters = arr.concat(arr2);
+console.log(letters);
+console.log(...arr, ...arr2);
+
+// ---------------------------------
+// ---------------------------------
+// JOIN
+
+console.log(letters.join(' - '));
+// a - b - c - d - e - f - g - h - i - j
+```
+
+## 141. Looping Arrays: forEach
+`Math.abs`: 수의 절대값을 반환
+
+```js
+// forEach 😙😘
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+for(const [i, mov] of movements.entries()){
+  if(mov > 0){
+    console.log(`Movement ${i + 1}: You deposited ${mov}`)
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
+  }
+}
+
+// FOR EACH 
+// forEach는 고차함수로 콜백함수를 요구한다.
+console.log('------- FOREACH -------');
+movements.forEach(function(mov, i, arr){
+  if(mov > 0){
+    console.log(`Movement ${i + 1}: You deposited ${mov}`)
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
+  }
+})
+
+// continue, break statement는 forEach문에서 쓸 수 없다. 😢😔 그냥 모든 배열을 다 loop over한다.
+// continue, break statement를 쓸거면 for of 를 써라!
+```
+
+## 142. forEach With Maps and Sets
+
+```js
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+// MAP
+currencies.forEach(function(value, key, map){
+  console.log(`${key}: ${value}`);
+  // USD: United States dollar
+  // EUR: Euro
+  // GBP: Pound sterling
+})
+
+// Set
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']); 
+// [] 배열로 안 묶어주면 Set(3) { 'U', 'S', 'D' } 처럼 나옴..ㅎ
+// Set(이터러블)! 이터러블 값을 넣어야 해요 👩‍🏫 중요~
+console.log(currenciesUnique);
+currenciesUnique.forEach(function(value, _, set){
+  console.log(`${value}: ${value}`); // key === value
+  // USD: USD
+  // GBP: GBP
+  // EUR: EUR
+  // 필요없는 변수명은 '_' 언더스코어로 지정해주는 것이 자바스크립트 컨벤션이다. 
+})
+```
