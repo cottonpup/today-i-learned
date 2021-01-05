@@ -1758,6 +1758,9 @@ console.dir(booker);
 ### slice()💇‍♀️
 ```js
 // SLICE 
+
+// slice() takes only 2 parameters 
+// 첫번째 인덱스는 자르는 출발시점, 두번째 인덱스는 자르는 것을 마치는 시점 (두번째 인덱스의 문자는 포함되지 않고 앞에서 잘린다.)
 let arr = ['a', 'b', 'c', 'd', 'e'];
 
 console.log(arr);
@@ -1792,6 +1795,21 @@ console.log(arr.splice()); //[ ]
 console.log(arr.splice(1, 2)); //[ 'b' ]
 console.log(arr); //[ 'a' ]
 // Original array is gone 😥😰
+
+let array = ['today', 'was', 'not', 'so', 'great'];
+
+array.splice(2, 2);
+// remove 2 elements beginning with the 3rd element
+// array now equals ['today', 'was', 'great']
+
+const numbers = [10, 11, 12, 12, 15];
+const startIndex = 3;
+const amountToDelete = 1;
+
+numbers.splice(startIndex, amountToDelete, 13, 14);
+// the second entry of 12 is removed, and we add 13 and 14 at the same index
+console.log(numbers);
+// returns [ 10, 11, 12, 13, 14, 15 ]
 ```
 
 ### reverse()💇‍♀️
