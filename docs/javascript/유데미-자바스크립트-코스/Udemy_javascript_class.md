@@ -1984,8 +1984,12 @@ console.log(depositFor);
 // }, 0);
 // console.log(balance);
 
+> 나 자꾸 reduce 메서드 사용할 때 `acc += cur` 이렇게 쓴다..
+>
+> 그렇게 안해도 되는게 reduce는 값을 누적하기 때문에 굳이 저렇게 안 적어도 된다. 명심..
+
 // 깔꼼 버젼 💅
-const balance = movements.reduce((acc, cur) => { acc + cur}, 0);
+const balance = movements.reduce((acc, cur) => {acc + cur}, 0);
 console.log(balance);
 
 // FOR OF 활용하기 - 초기값(쌓이는 값)은 유동적으로 계속 변하니까 let으로 설정해두어야 함! 
@@ -2006,4 +2010,52 @@ const max = movements.reduce((acc, mov) => {
 }, movements[0]); // initialValue에 0하지 않기! 만약 값들이 다 마이너스면 어떡해..ㅎㅎ
 
 console.log(`최후의 승자..👑: ${max}`);
+```
+
+> reduce 메서드로 평균 값을 구할 때, 초기 값이 매우 중요하다..!
+> 
+> 평균 값이 다르게 출력될 수도 있기 때문이다. 평균은 무조건 초기값을 0으로 설정해줘야 한다.
+
+```js
+const a = [1, 2, 3, 4, 5];
+
+const test1 = a.reduce(function(acc, cur){
+  console.log(`${acc} + ${cur}`)
+  return acc + cur;
+}, a[0]);
+console.log('\n');
+const test2 = a.reduce(function(acc, cur){
+  console.log(`${acc} + ${cur}`)
+  return acc + cur;
+}, 0);
+console.log('\n')
+console.log(test1);
+console.log('\n')
+console.log(test1);
+```
+
+```js
+// 보통 인간이라면, 할 방법..ㅎㅎㅎㅎ
+//   const averageHumanAge = adults.reduce((acc, age) => 
+//   acc + age / adults.length, 0);
+
+const average = adults.reduce(
+    (acc, age, i, arr) => acc + age / arr.length,
+    0
+  );
+
+// 2를 마지막 합에 나누나, 각자 나누나 값은 똑같다...! 😨😱🤯😳🙊 나 넘 몽총..
+// 2 3. (2+3)/2 = 2.5 === 2/2+3/2 = 2.5 
+```
+
+## 152. The Magic of Chaining Methods
+
+```js
+const eurToUsd = 1.1;
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * eurToUsd)
+  .reduce((acc, cur) => acc + cur, 0);
+
+console.log(totalDepositsUSD);
 ```
