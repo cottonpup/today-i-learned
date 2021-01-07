@@ -1910,3 +1910,8 @@ currenciesUnique.forEach(function(value, _, set){
   // 필요없는 변수명은 '_' 언더스코어로 지정해주는 것이 자바스크립트 컨벤션이다. 
 })
 ```
+
+## 146. Data Transformations: map, filter, reduce
+
+<img width="1280" alt="Screen Shot 2021-01-07 at 12 28 45 PM" src="https://user-images.githubusercontent.com/67526014/103847911-8b9cb280-50e4-11eb-9df9-509d06d116e1.png">
+
