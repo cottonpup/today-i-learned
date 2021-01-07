@@ -6,7 +6,7 @@
   - 🧚‍♀️ 2021 Studies
     - [**[📝 이론정리]** Set과 Map](/javascript/2021/set_map_note.md)
   
-    - [**[Today I Learned - JAN]**]
+    - [**Today I Learned - JAN**]
       - [**[T.I.L]** 2020.Jan.07](/javascript/2021/2021_JAN_TIL/2021_JAN_07.md)
 
     - **[FreeCodeCamp]** 자바스크립트
