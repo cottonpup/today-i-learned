@@ -1,4 +1,4 @@
-# Udemy React class Section1
+# Udemy React class
 
 # Section 1
 
