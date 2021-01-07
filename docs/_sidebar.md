@@ -29,7 +29,9 @@
       - [**[FreeCodeCamp]** Debugging](/javascript/2020/freedCodeCamp_Debugging.md)
 
 - 💠 React
-
+  
+  - 🧚‍♀️ 2021 Studies
+    - [**[Udemy]** Udemy React Course](/React/Udemy_React_class/udemy_react_class_Section1.md)
   - 🧚‍♀️ 2020 Studies
 
     - [**[스터디 활동]** 리액트 기초 스터디](/React/react_baisc_study.md)
@@ -39,8 +41,6 @@
     - **[FreeCodeCamp]** 리액트
 
       - [**[FreeCodeCamp]** React](/React/freedCodeCamp_React.md)
-  - 🧚‍♀️ 2021 Studies
-    - [**[Udemy]** Udemy React Course](/React/Udemy_React_class/udemy_react_class_Section1.md)
 
 - 🚂 HTML
   
