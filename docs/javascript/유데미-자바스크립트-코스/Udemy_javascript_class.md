@@ -1915,3 +1915,95 @@ currenciesUnique.forEach(function(value, _, set){
 
 <img width="1280" alt="Screen Shot 2021-01-07 at 12 28 45 PM" src="https://user-images.githubusercontent.com/67526014/103847911-8b9cb280-50e4-11eb-9df9-509d06d116e1.png">
 
+## 147. The map Method
+
+🗺 `Map`을 `forEach`처럼 loop over하며 사용하기! 
+
+`차이점은 뭔데?🧐`: map은 새로운 배열로 따로 반환된다.
+
+```js
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// Map으로 새로운 배열로 출력하기 🗺
+movements.map(function(mov, i){
+  if(mov > 0){
+    console.log(`Movement ${i + 1}: You deposited ${mov}`)
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
+  }
+})
+
+movements.map((mov, i) => console.log(`Movement ${i + 1}: You ${mov > 0? 'deposited' : 'withdrew'} ${Math.abs(mov)}`))
+```
+
+## 148. Computing Usernames
+
+`Mission 🚀`: 각 이름의 첫번째 글자만 받아오기
+
+map 메서드를 사용하여 loop over하기!
+
+```js
+const user = 'Steven Thomas Williams';
+
+const userName = user
+.toLowerCase()
+.split(' ')
+.map(name => name[0])
+.join('');
+console.log(userName); // stw
+```
+
+## 149. The filter method
+
+`Mission 🚀`: 양수만 받아오기
+
+filter 메서드, for of를 사용하여 loop over하기!
+
+```js
+// 1. filter 사용하기 🚀 - 새로운 배열로 따로 출력
+const deposit = movements.filter(function(mov){
+  return mov > 0;
+})
+console.log(deposit);
+
+// 2. for of 사용하기 🚀
+const depositFor = []; - 새로운 배열로 출력하기 위해선 따로 아이템들을 빈 배열에 push 해야 가능!
+for(const mov of movements) if(mov > 0) depositFor.push(mov);
+console.log(depositFor);
+```
+
+## 150. The reduce method
+
+`Mission 🚀`: 합계 출력하기!, 최댓값 출력하기! 
+
+```js
+// REDUCE METHOD
+// accumulator -> SNOWBALL ☃️
+// const balance = movements.reduce(function(acc, cur, i, arr){ // acc = accumulator
+//   return acc + cur;
+// }, 0);
+// console.log(balance);
+
+// 깔꼼 버젼 💅
+const balance = movements.reduce((acc, cur) => { acc + cur}, 0);
+console.log(balance);
+
+// FOR OF 활용하기 - 초기값(쌓이는 값)은 유동적으로 계속 변하니까 let으로 설정해두어야 함! 
+let balance2 = 0;
+for(const mov of movements) balance2 += mov;
+console.log(balance2);
+
+// Maximum value
+console.log(movements);
+const max = movements.reduce((acc, mov) => {
+  if(acc > mov) {
+    console.log(`${acc} > ${mov}`);
+    return acc
+  } else {
+    console.log(`${acc} < ${mov}`);
+    return mov
+  };
+}, movements[0]); // initialValue에 0하지 않기! 만약 값들이 다 마이너스면 어떡해..ㅎㅎ
+
+console.log(`최후의 승자..👑: ${max}`);
+```
