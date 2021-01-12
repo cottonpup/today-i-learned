@@ -2200,6 +2200,7 @@ console.log(x);
 x.fill(23, 4, 6) // [empty × 3, 1, 23, 23, empty] 
 console.log(x); 
 ```
+
 - 2. Array.from() 🎃
 ```js
 // 2. Array.from() 🎃
