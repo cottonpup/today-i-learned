@@ -2183,6 +2183,7 @@ console.log(overallBalance);
 ## 161. More Ways of Creating and Filling Arrays
 
 - 1. Array.fill() 🎃
+  
 ```js
 // 1. Array.fill() 🎃
 console.log([1, 2, 3]);
@@ -2202,6 +2203,7 @@ console.log(x);
 ```
 
 - 2. Array.from() 🎃
+  
 ```js
 // 2. Array.from() 🎃
 const y = Array.from({length: 7}, ()=> 1);
@@ -2212,6 +2214,7 @@ console.log(z); // [1, 2, 3, 4, 5, 6, 7]
 ```
 
 - querySelectorAll 🎃
+  
 ```js
 /*
 querySelectorAll 은 NodeList를 반환하는데, 진짜 Array가 아니다. 
@@ -2236,3 +2239,6 @@ labelBalance.addEventListener('click', function(){
   console.log(movementsUI2);
 });
 ```
+
+## 1. Summary: Which Array Method to Use?
+
