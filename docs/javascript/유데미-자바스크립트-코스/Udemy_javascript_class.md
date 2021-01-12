@@ -2059,3 +2059,179 @@ const totalDepositsUSD = movements
 
 console.log(totalDepositsUSD);
 ```
+
+## 153. Coding Challenge #2
+
+```js
+// 코드 블럭이 있는 거랑 없는거랑... 
+// 화살표 함수에서 블럭이 없으면, return 안 적어도 된다구엿!!
+const calcAverageHumanAge = (ages) => 
+  ages.map(age => age <= 2? 2 * age : 16 + age * 4)
+  .filter(age => age >= 18)
+  .reduce((pre, cur, i, arr) => pre + cur / arr.length, 0) // 초기값은 무조건 뒤!
+
+const test1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+console.log(test1);
+```
+
+## 154. The find method
+
+find 메서드는 filter 메서드와 비슷하게 동작한다.
+
+하지만 filter는 배열을 반환하고, find 메서드는 조건에 부합하는 첫번째 아이템만을 반환한다.
+
+```js
+// The find Method
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(movements);
+console.log(firstWithdrawal);
+console.log(accounts);
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
+```
+
+## 155. Implementing Login
+
+먼가 신기한 할당 방법! ㅎ
+
+```js
+// 왼쪽에서, 오른쪽으로 할당하기 때문에, 이렇게 적는 것이 가능하다. 
+inputLoginUsername.value = inputLoginPin.value = '';
+```
+
+## 157. The findIndex Method
+
+`findIndex()` 메서드는 `find()` 메서드와 비슷하나, 엘리먼트 자체가 아닌 엘리먼트의 인덱스를 반환한다.
+
+## 158. some and every
+
+```js
+console.log(movements);
+
+// EQUALITY
+console.log(movements.includes(-130)); // true
+
+// SOME: CONDITION
+console.log(movements.some((mov) => mov === -130)); // true
+
+const anyDeposits = movements.some((mov) => mov > 0); // 조건에 부합하는 any value!!
+console.log(anyDeposits);
+
+// EVERY
+console.log(movements.every((mov) => mov > 0));
+console.log(account4.movements.every((mov) => mov > 0));
+
+// Separate callback
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
+```
+
+## 159. flat and flatMap
+
+```js
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arr.flat());
+// [1, 2, 3, 4, 5, 6, 7, 8]
+
+const arrDeep = [[1, [2, 3]], [4, [5, 6]], 7, 8];
+console.log(arrDeep.flat(2));
+// [1, 2, 3, 4, 5, 6, 7, 8]
+
+// const accountMovement = accounts.map(acc => acc.movements);
+// console.log(accountMovement);
+// const allMovements = accountMovement.flat();
+// console.log(allMovements);
+// const overallBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+// console.log(overallBalance);
+
+// flat: chaining
+const overallBalance = accounts
+  .map((acc) => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance);
+// 17840
+
+
+// flatMap
+const overallBalance = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance);
+// 17840
+```
+
+## 160. Sorting Arrays
+
+```js
+// movements.sort((a, b) => a - b);
+// console.log('ascending', movements);
+
+// descending
+// movements.sort((a, b) => {
+//   if(a > b) return -1;
+//   if(a < b) return 1;
+// });
+
+// movements.sort((a, b) => b - a);
+// console.log('descending', movements);
+```
+
+## 161. More Ways of Creating and Filling Arrays
+
+- 1. Array.fill() 🎃
+```js
+// 1. Array.fill() 🎃
+console.log([1, 2, 3]);
+console.log(new Array(1, 2, 3)); // [1, 2, 3]
+
+const x = new Array(7);
+console.log(x); // [empty x 7] array 
+// console.log(x.map(()=> 5)); // [empty x 7] array : doesn't work
+
+// x.fill(3); // mutate the underlying array 
+// x.fill(1, 3) // [empty × 3, 1, 1, 1, 1]
+x.fill(1, 3, 5) // [empty × 3, 1, 1, empty × 2]
+console.log(x); 
+
+x.fill(23, 4, 6) // [empty × 3, 1, 23, 23, empty] 
+console.log(x); 
+```
+- 2. Array.from() 🎃
+```js
+// 2. Array.from() 🎃
+const y = Array.from({length: 7}, ()=> 1);
+console.log(y); // [1, 1, 1, 1, 1, 1, 1]
+
+const z = Array.from({length: 7}, (_, i)=> i+1); // cur => _ 컨벤션에 따라 인자명 바꿔주기
+console.log(z); // [1, 2, 3, 4, 5, 6, 7]
+```
+
+- querySelectorAll 🎃
+```js
+/*
+querySelectorAll 은 NodeList를 반환하는데, 진짜 Array가 아니다. 
+따라서 많은 Array method를 가지고 있지 않는다. 
+그럼 어떻게 해야해요??😙 NodeList를 Array로 반환하자! 
+For that, `Array.from()`은 PERFECT! 👏
+*/
+
+labelBalance.addEventListener('click', function(){
+  // movementsUI => Array 
+  // 두번째 인자에 맵핑한 숫자 넣기 
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'), 
+    el => Number(el.textContent.replace('€' ,''))
+  )
+  console.log(movementsUI);
+
+  // 다른 방법!
+  const movementsUI2 = [
+    ...document.querySelectorAll('.movements__value'),
+  ].map(el => Number(el.textContent.replace('€', '')));
+  console.log(movementsUI2);
+});
+```
