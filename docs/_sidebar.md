@@ -52,6 +52,8 @@
   
     - [**[👻 Info]** textContent vs innerText vs innerHTML](/html/../../html/textcontent_innertext_innerhtml.md)
 
+    - [**[TIL]** a태그의 디폴트 동작](docs/html/2021.JAN.13.md)
+
 - 💅 CSS
 
 - 🌐 Browser
