@@ -2252,3 +2252,154 @@ console.log('======== 정렬 ========')
 const sortedDogs = dogs.slice().sort((a, b) => a.recFood - b.recFood);
 console.log(sortedDogs)
 ```
+
+## 180. How the DOM Really Works
+
+<img width="1280" alt="Screen Shot 2021-01-13 at 10 38 55 AM" src="https://user-images.githubusercontent.com/67526014/104401432-8386bc00-5597-11eb-977c-29203840e8a9.png">
+
+<img width="1280" alt="Screen Shot 2021-01-13 at 12 03 07 PM" src="https://user-images.githubusercontent.com/67526014/104401434-84b7e900-5597-11eb-9ad8-a38af46e2158.png">
+
+## 183. Implementing Smooth Scrolling
+
+```js
+///////////////////////////////////////
+// Button scrolling
+btnScrollTo.addEventListener('click', function (e) {
+  // 뷰포트에서 보이는 좌표 - Section의 위치를 뺀 좌표 
+  // 상대적인 값!
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  // console.log(e.target.getBoundingClientRect());
+
+  // Current scroll 위치
+  // console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
+
+  // 뷰포트 사이즈
+  // console.log(
+  //   'height/width viewport',
+  //   document.documentElement.clientHeight,
+  //   document.documentElement.clientWidth
+  // );
+
+  // Scrolling
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+
+  // 전통적인 방법!
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+
+  // 모던한 방법이지만 지원하는 브라우저가 적음. 
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+```
+
+## 184. Types of Events and Event Handlers
+
+```js
+///////////////////////////////////////
+const h1 = document.querySelector('h1');
+const alertH1 = function(e){
+  alert('addEventListener: Great! You are reading the heading :D');
+  // 이벤트 한번만 일어나게 하고 지우기! 
+  // h1.removeEventListener('mouseenter', alertH1)
+};
+
+h1.addEventListener('mouseenter', alertH1);
+
+// 이벤트 3초 뒤에 지우기! 
+setTimeout(()=> h1.removeEventListener('mouseenter', alertH1), 3000);
+
+// 보통 많이 쓰는 방법!
+// h1.addEventListener('mouseenter', function(e){
+//   alert('addEventListener: Great! You are reading the heading :D')
+// })
+
+// 올드한 방법!! On-event property 
+// h1.onmouseenter = function (e) {
+//   alert('onmouseenter: Great! You are reading the heading :D');
+// };
+```
+
+## 186. Event Propagation in Practice
+
+[이벤트 버블링, 이벤트 캡처 그리고 이벤트 위임까지](https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/)
+
+[버블링과 캡처링](https://ko.javascript.info/bubbling-and-capturing)
+
+캡처링 - window 로부터 이벤트가 발생한 요소까지 이벤트를 전파한다.
+버블링 - 이벤트가 발생한 요소부터 window 까지 이벤트를 전파한다.
+
+```js
+///////////////////////////////////////
+
+// rgb(255.255.255)
+const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+const randomColor = () => `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+console.log(randomColor(0, 255));
+
+<img width="450" alt="9935C9425AE422C52C" src="https://user-images.githubusercontent.com/67526014/104410322-707de700-55ab-11eb-8703-7c5a6b556db6.png">
+
+
+/*
+Event happens at the document root and from there, 
+It travels down to the target element.
+*/
+
+// EVENT BUBBLING 🛁
+// 부모 엘리먼트로 버블 업!
+document.querySelector('.nav__link').addEventListener('click', function(e){
+  this.style.backgroundColor = randomColor();
+  console.log('LINK', e.target, e.currentTarget);
+  console.log(e.currentTarget === this);
+
+  // Stop propagation
+  // e.stopPropagation();
+})
+
+document.querySelector('.nav__links').addEventListener('click', function(e){
+  this.style.backgroundColor = randomColor();
+  console.log('CONTAINER', e.target, e.currentTarget);
+})
+
+document.querySelector('.nav').addEventListener('click', function(e){
+  this.style.backgroundColor = randomColor();
+  console.log('NAV', e.target, e.currentTarget);
+}, false); 
+// if you set true, the event handler will no longer listen to bubbling events,
+// but instead, to capturing events. 
+// it travels down from the DOM
+```
+
+## 187. Event Delegation: Implementing Page Navigation
+
+```js
+///////////////////////////////////////
+// Page navigation
+
+
+```
+
+## 
+
+```js
+
+```
+
+## 
+
+```js
+
+```
+
+## 
+
+```js
+
+```
