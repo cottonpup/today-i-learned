@@ -2244,3 +2244,11 @@ labelBalance.addEventListener('click', function(){
 
 <img width="1280" alt="Screen Shot 2021-01-12 at 7 05 04 PM" src="https://user-images.githubusercontent.com/67526014/104299930-280ded00-5509-11eb-9100-e183b7887df2.png">
 
+## 163. Coding Challenge
+
+```js
+console.log('======== 정렬 ========')
+// recFood를 정렬하고, 오름차순 정렬 순으로 객체 출력하기
+const sortedDogs = dogs.slice().sort((a, b) => a.recFood - b.recFood);
+console.log(sortedDogs)
+```
